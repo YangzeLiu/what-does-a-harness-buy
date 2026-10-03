@@ -1,0 +1,35 @@
+{
+  "job_name": "mini-qwen36-nw-smoke",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 1,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "mini-swe-agent",
+      "model_name": "openai/qwen3.6-35b-a3b",
+      "kwargs": {
+        "config": {
+          "agent": {
+            "step_limit": 300
+          }
+        }
+      },
+      "env": {
+        "OPENAI_API_KEY": "<REDACTED>",
+        "OPENAI_BASE_URL": "https://172.17.0.1:8443/v1",
+        "SSL_VERIFY": "false"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-11133"
+    }
+  ]
+}

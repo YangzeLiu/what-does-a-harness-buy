@@ -1,0 +1,1402 @@
+{
+  "job_name": "oc-qwen-pool447-nw-rg",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 8,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "qwen-local/qwen3.8-27b",
+      "kwargs": {
+        "opencode_config": {
+          "provider": {
+            "qwen-local": {
+              "models": {
+                "qwen3.8-27b": {
+                  "limit": {
+                    "context": 131072,
+                    "output": 32768,
+                    "input": 98000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "name": "Qwen3.8-27B",
+                  "tool_call": true
+                }
+              },
+              "name": "Qwen local (host-a vLLM :8002)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8002/v1"
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "QWEN_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_pool/astropy__astropy-12907"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-13033"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-13236"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-13453"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-13977"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14096"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14182"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14309"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14365"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14508"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14539"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14598"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-14995"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-7166"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-7336"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-7606"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-7671"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-8707"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-8872"
+    },
+    {
+      "path": "tasks_pool/django__django-10097"
+    },
+    {
+      "path": "tasks_pool/django__django-10880"
+    },
+    {
+      "path": "tasks_pool/django__django-10914"
+    },
+    {
+      "path": "tasks_pool/django__django-10973"
+    },
+    {
+      "path": "tasks_pool/django__django-10999"
+    },
+    {
+      "path": "tasks_pool/django__django-11066"
+    },
+    {
+      "path": "tasks_pool/django__django-11087"
+    },
+    {
+      "path": "tasks_pool/django__django-11095"
+    },
+    {
+      "path": "tasks_pool/django__django-11099"
+    },
+    {
+      "path": "tasks_pool/django__django-11119"
+    },
+    {
+      "path": "tasks_pool/django__django-11133"
+    },
+    {
+      "path": "tasks_pool/django__django-11141"
+    },
+    {
+      "path": "tasks_pool/django__django-11149"
+    },
+    {
+      "path": "tasks_pool/django__django-11163"
+    },
+    {
+      "path": "tasks_pool/django__django-11179"
+    },
+    {
+      "path": "tasks_pool/django__django-11206"
+    },
+    {
+      "path": "tasks_pool/django__django-11211"
+    },
+    {
+      "path": "tasks_pool/django__django-11239"
+    },
+    {
+      "path": "tasks_pool/django__django-11265"
+    },
+    {
+      "path": "tasks_pool/django__django-11276"
+    },
+    {
+      "path": "tasks_pool/django__django-11292"
+    },
+    {
+      "path": "tasks_pool/django__django-11299"
+    },
+    {
+      "path": "tasks_pool/django__django-11333"
+    },
+    {
+      "path": "tasks_pool/django__django-11433"
+    },
+    {
+      "path": "tasks_pool/django__django-11451"
+    },
+    {
+      "path": "tasks_pool/django__django-11477"
+    },
+    {
+      "path": "tasks_pool/django__django-11490"
+    },
+    {
+      "path": "tasks_pool/django__django-11532"
+    },
+    {
+      "path": "tasks_pool/django__django-11551"
+    },
+    {
+      "path": "tasks_pool/django__django-11555"
+    },
+    {
+      "path": "tasks_pool/django__django-11603"
+    },
+    {
+      "path": "tasks_pool/django__django-11728"
+    },
+    {
+      "path": "tasks_pool/django__django-11734"
+    },
+    {
+      "path": "tasks_pool/django__django-11740"
+    },
+    {
+      "path": "tasks_pool/django__django-11749"
+    },
+    {
+      "path": "tasks_pool/django__django-11790"
+    },
+    {
+      "path": "tasks_pool/django__django-11815"
+    },
+    {
+      "path": "tasks_pool/django__django-11820"
+    },
+    {
+      "path": "tasks_pool/django__django-11848"
+    },
+    {
+      "path": "tasks_pool/django__django-11880"
+    },
+    {
+      "path": "tasks_pool/django__django-11951"
+    },
+    {
+      "path": "tasks_pool/django__django-11964"
+    },
+    {
+      "path": "tasks_pool/django__django-11999"
+    },
+    {
+      "path": "tasks_pool/django__django-12039"
+    },
+    {
+      "path": "tasks_pool/django__django-12050"
+    },
+    {
+      "path": "tasks_pool/django__django-12125"
+    },
+    {
+      "path": "tasks_pool/django__django-12143"
+    },
+    {
+      "path": "tasks_pool/django__django-12155"
+    },
+    {
+      "path": "tasks_pool/django__django-12193"
+    },
+    {
+      "path": "tasks_pool/django__django-12209"
+    },
+    {
+      "path": "tasks_pool/django__django-12262"
+    },
+    {
+      "path": "tasks_pool/django__django-12273"
+    },
+    {
+      "path": "tasks_pool/django__django-12276"
+    },
+    {
+      "path": "tasks_pool/django__django-12304"
+    },
+    {
+      "path": "tasks_pool/django__django-12308"
+    },
+    {
+      "path": "tasks_pool/django__django-12406"
+    },
+    {
+      "path": "tasks_pool/django__django-12419"
+    },
+    {
+      "path": "tasks_pool/django__django-12663"
+    },
+    {
+      "path": "tasks_pool/django__django-12713"
+    },
+    {
+      "path": "tasks_pool/django__django-12741"
+    },
+    {
+      "path": "tasks_pool/django__django-12754"
+    },
+    {
+      "path": "tasks_pool/django__django-12774"
+    },
+    {
+      "path": "tasks_pool/django__django-12858"
+    },
+    {
+      "path": "tasks_pool/django__django-12965"
+    },
+    {
+      "path": "tasks_pool/django__django-13012"
+    },
+    {
+      "path": "tasks_pool/django__django-13023"
+    },
+    {
+      "path": "tasks_pool/django__django-13028"
+    },
+    {
+      "path": "tasks_pool/django__django-13033"
+    },
+    {
+      "path": "tasks_pool/django__django-13089"
+    },
+    {
+      "path": "tasks_pool/django__django-13109"
+    },
+    {
+      "path": "tasks_pool/django__django-13112"
+    },
+    {
+      "path": "tasks_pool/django__django-13121"
+    },
+    {
+      "path": "tasks_pool/django__django-13158"
+    },
+    {
+      "path": "tasks_pool/django__django-13195"
+    },
+    {
+      "path": "tasks_pool/django__django-13279"
+    },
+    {
+      "path": "tasks_pool/django__django-13297"
+    },
+    {
+      "path": "tasks_pool/django__django-13315"
+    },
+    {
+      "path": "tasks_pool/django__django-13343"
+    },
+    {
+      "path": "tasks_pool/django__django-13346"
+    },
+    {
+      "path": "tasks_pool/django__django-13363"
+    },
+    {
+      "path": "tasks_pool/django__django-13401"
+    },
+    {
+      "path": "tasks_pool/django__django-13406"
+    },
+    {
+      "path": "tasks_pool/django__django-13410"
+    },
+    {
+      "path": "tasks_pool/django__django-13417"
+    },
+    {
+      "path": "tasks_pool/django__django-13512"
+    },
+    {
+      "path": "tasks_pool/django__django-13513"
+    },
+    {
+      "path": "tasks_pool/django__django-13516"
+    },
+    {
+      "path": "tasks_pool/django__django-13551"
+    },
+    {
+      "path": "tasks_pool/django__django-13568"
+    },
+    {
+      "path": "tasks_pool/django__django-13569"
+    },
+    {
+      "path": "tasks_pool/django__django-13590"
+    },
+    {
+      "path": "tasks_pool/django__django-13658"
+    },
+    {
+      "path": "tasks_pool/django__django-13670"
+    },
+    {
+      "path": "tasks_pool/django__django-13741"
+    },
+    {
+      "path": "tasks_pool/django__django-13786"
+    },
+    {
+      "path": "tasks_pool/django__django-13794"
+    },
+    {
+      "path": "tasks_pool/django__django-13807"
+    },
+    {
+      "path": "tasks_pool/django__django-13809"
+    },
+    {
+      "path": "tasks_pool/django__django-13810"
+    },
+    {
+      "path": "tasks_pool/django__django-13820"
+    },
+    {
+      "path": "tasks_pool/django__django-13821"
+    },
+    {
+      "path": "tasks_pool/django__django-13925"
+    },
+    {
+      "path": "tasks_pool/django__django-13933"
+    },
+    {
+      "path": "tasks_pool/django__django-13964"
+    },
+    {
+      "path": "tasks_pool/django__django-14017"
+    },
+    {
+      "path": "tasks_pool/django__django-14034"
+    },
+    {
+      "path": "tasks_pool/django__django-14053"
+    },
+    {
+      "path": "tasks_pool/django__django-14089"
+    },
+    {
+      "path": "tasks_pool/django__django-14122"
+    },
+    {
+      "path": "tasks_pool/django__django-14140"
+    },
+    {
+      "path": "tasks_pool/django__django-14155"
+    },
+    {
+      "path": "tasks_pool/django__django-14170"
+    },
+    {
+      "path": "tasks_pool/django__django-14238"
+    },
+    {
+      "path": "tasks_pool/django__django-14311"
+    },
+    {
+      "path": "tasks_pool/django__django-14315"
+    },
+    {
+      "path": "tasks_pool/django__django-14349"
+    },
+    {
+      "path": "tasks_pool/django__django-14351"
+    },
+    {
+      "path": "tasks_pool/django__django-14373"
+    },
+    {
+      "path": "tasks_pool/django__django-14376"
+    },
+    {
+      "path": "tasks_pool/django__django-14404"
+    },
+    {
+      "path": "tasks_pool/django__django-14434"
+    },
+    {
+      "path": "tasks_pool/django__django-14493"
+    },
+    {
+      "path": "tasks_pool/django__django-14500"
+    },
+    {
+      "path": "tasks_pool/django__django-14534"
+    },
+    {
+      "path": "tasks_pool/django__django-14539"
+    },
+    {
+      "path": "tasks_pool/django__django-14559"
+    },
+    {
+      "path": "tasks_pool/django__django-14580"
+    },
+    {
+      "path": "tasks_pool/django__django-14608"
+    },
+    {
+      "path": "tasks_pool/django__django-14672"
+    },
+    {
+      "path": "tasks_pool/django__django-14725"
+    },
+    {
+      "path": "tasks_pool/django__django-14752"
+    },
+    {
+      "path": "tasks_pool/django__django-14765"
+    },
+    {
+      "path": "tasks_pool/django__django-14771"
+    },
+    {
+      "path": "tasks_pool/django__django-14787"
+    },
+    {
+      "path": "tasks_pool/django__django-14792"
+    },
+    {
+      "path": "tasks_pool/django__django-14855"
+    },
+    {
+      "path": "tasks_pool/django__django-14915"
+    },
+    {
+      "path": "tasks_pool/django__django-14999"
+    },
+    {
+      "path": "tasks_pool/django__django-15022"
+    },
+    {
+      "path": "tasks_pool/django__django-15037"
+    },
+    {
+      "path": "tasks_pool/django__django-15098"
+    },
+    {
+      "path": "tasks_pool/django__django-15103"
+    },
+    {
+      "path": "tasks_pool/django__django-15104"
+    },
+    {
+      "path": "tasks_pool/django__django-15127"
+    },
+    {
+      "path": "tasks_pool/django__django-15161"
+    },
+    {
+      "path": "tasks_pool/django__django-15252"
+    },
+    {
+      "path": "tasks_pool/django__django-15277"
+    },
+    {
+      "path": "tasks_pool/django__django-15278"
+    },
+    {
+      "path": "tasks_pool/django__django-15280"
+    },
+    {
+      "path": "tasks_pool/django__django-15315"
+    },
+    {
+      "path": "tasks_pool/django__django-15368"
+    },
+    {
+      "path": "tasks_pool/django__django-15375"
+    },
+    {
+      "path": "tasks_pool/django__django-15380"
+    },
+    {
+      "path": "tasks_pool/django__django-15382"
+    },
+    {
+      "path": "tasks_pool/django__django-15467"
+    },
+    {
+      "path": "tasks_pool/django__django-15499"
+    },
+    {
+      "path": "tasks_pool/django__django-15525"
+    },
+    {
+      "path": "tasks_pool/django__django-15554"
+    },
+    {
+      "path": "tasks_pool/django__django-15561"
+    },
+    {
+      "path": "tasks_pool/django__django-15563"
+    },
+    {
+      "path": "tasks_pool/django__django-15569"
+    },
+    {
+      "path": "tasks_pool/django__django-15572"
+    },
+    {
+      "path": "tasks_pool/django__django-15695"
+    },
+    {
+      "path": "tasks_pool/django__django-15731"
+    },
+    {
+      "path": "tasks_pool/django__django-15732"
+    },
+    {
+      "path": "tasks_pool/django__django-15741"
+    },
+    {
+      "path": "tasks_pool/django__django-15814"
+    },
+    {
+      "path": "tasks_pool/django__django-15851"
+    },
+    {
+      "path": "tasks_pool/django__django-15863"
+    },
+    {
+      "path": "tasks_pool/django__django-15916"
+    },
+    {
+      "path": "tasks_pool/django__django-15930"
+    },
+    {
+      "path": "tasks_pool/django__django-15973"
+    },
+    {
+      "path": "tasks_pool/django__django-15987"
+    },
+    {
+      "path": "tasks_pool/django__django-16032"
+    },
+    {
+      "path": "tasks_pool/django__django-16082"
+    },
+    {
+      "path": "tasks_pool/django__django-16100"
+    },
+    {
+      "path": "tasks_pool/django__django-16116"
+    },
+    {
+      "path": "tasks_pool/django__django-16136"
+    },
+    {
+      "path": "tasks_pool/django__django-16139"
+    },
+    {
+      "path": "tasks_pool/django__django-16145"
+    },
+    {
+      "path": "tasks_pool/django__django-16255"
+    },
+    {
+      "path": "tasks_pool/django__django-16256"
+    },
+    {
+      "path": "tasks_pool/django__django-16315"
+    },
+    {
+      "path": "tasks_pool/django__django-16333"
+    },
+    {
+      "path": "tasks_pool/django__django-16429"
+    },
+    {
+      "path": "tasks_pool/django__django-16454"
+    },
+    {
+      "path": "tasks_pool/django__django-16485"
+    },
+    {
+      "path": "tasks_pool/django__django-16493"
+    },
+    {
+      "path": "tasks_pool/django__django-16502"
+    },
+    {
+      "path": "tasks_pool/django__django-16527"
+    },
+    {
+      "path": "tasks_pool/django__django-16569"
+    },
+    {
+      "path": "tasks_pool/django__django-16595"
+    },
+    {
+      "path": "tasks_pool/django__django-16612"
+    },
+    {
+      "path": "tasks_pool/django__django-16642"
+    },
+    {
+      "path": "tasks_pool/django__django-16661"
+    },
+    {
+      "path": "tasks_pool/django__django-16662"
+    },
+    {
+      "path": "tasks_pool/django__django-16667"
+    },
+    {
+      "path": "tasks_pool/django__django-16801"
+    },
+    {
+      "path": "tasks_pool/django__django-16819"
+    },
+    {
+      "path": "tasks_pool/django__django-16877"
+    },
+    {
+      "path": "tasks_pool/django__django-16899"
+    },
+    {
+      "path": "tasks_pool/django__django-16901"
+    },
+    {
+      "path": "tasks_pool/django__django-16938"
+    },
+    {
+      "path": "tasks_pool/django__django-16950"
+    },
+    {
+      "path": "tasks_pool/django__django-17029"
+    },
+    {
+      "path": "tasks_pool/django__django-17084"
+    },
+    {
+      "path": "tasks_pool/django__django-17087"
+    },
+    {
+      "path": "tasks_pool/django__django-7530"
+    },
+    {
+      "path": "tasks_pool/django__django-9296"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-13989"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-14623"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-20488"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-20676"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-20826"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-20859"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-21568"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-22719"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-22865"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-22871"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-23299"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-23314"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-23412"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-23476"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24026"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24149"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24177"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24570"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24627"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24637"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24870"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24970"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25122"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25287"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25311"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25332"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25479"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25775"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25960"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-26113"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-26208"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-26291"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-26342"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-26466"
+    },
+    {
+      "path": "tasks_pool/mwaskom__seaborn-3069"
+    },
+    {
+      "path": "tasks_pool/mwaskom__seaborn-3187"
+    },
+    {
+      "path": "tasks_pool/pallets__flask-5014"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-2905"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-3095"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-3151"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-3305"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-3677"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4075"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4094"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4356"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4629"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4687"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4695"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-4966"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-6461"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-6599"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-6721"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-6744"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-6938"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-7229"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-7233"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-7393"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-4604"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-4661"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-4970"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-6386"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-6528"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-6903"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-7080"
+    },
+    {
+      "path": "tasks_pool/pylint-dev__pylint-7277"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-10051"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-10081"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-5262"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-5631"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-5809"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-5840"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-6202"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7205"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7236"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7324"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7432"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7490"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7521"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7571"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7982"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-8399"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-10297"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-10844"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-10908"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-11310"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-11578"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-12585"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-12682"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-12973"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13124"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13135"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13142"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13328"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13439"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13496"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-13779"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14053"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14087"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14141"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14496"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14629"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14710"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14894"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-14983"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-15100"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-25232"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-25747"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-25931"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-25973"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-26194"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-26323"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-9288"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-10323"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-10435"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-10449"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-10466"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-10614"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-10673"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-11445"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7440"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7454"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7462"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7748"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7757"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7889"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7910"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7985"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8035"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8056"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8120"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8265"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8269"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8459"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8475"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8551"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8593"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8595"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8621"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8638"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8721"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9230"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9258"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9281"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9320"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9367"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9591"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9602"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9658"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9673"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9698"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-9711"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-11618"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-12096"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-12419"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-12481"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13031"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13091"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13372"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13480"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13551"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13615"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13647"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13757"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13798"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13877"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13974"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-14531"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-14711"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-14976"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15017"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15345"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15349"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15599"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15809"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15875"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15976"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-16450"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-16766"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-16792"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-16886"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-17139"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-17318"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-17655"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-18189"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-18211"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-18698"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-18763"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19040"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19346"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19495"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19637"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19783"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19954"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-20154"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-20428"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-20438"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-20590"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-20801"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-20916"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-21379"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-21596"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-21612"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-21847"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-21930"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-22080"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-22456"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-22714"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-22914"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-23262"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-23413"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-23534"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-23824"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-23950"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-24066"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-24213"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-24443"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-24539"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-24562"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-24661"
+    }
+  ]
+}

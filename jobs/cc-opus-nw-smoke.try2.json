@@ -1,0 +1,47 @@
+{
+  "job_name": "cc-opus-nw-smoke",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 1,
+  "environment": {
+    "type": "docker",
+    "extra_docker_compose": [
+      "noweb_compose.yaml"
+    ]
+  },
+  "verifier": {
+    "env": {
+      "HTTPS_PROXY": "http://172.30.0.1:18791",
+      "HTTP_PROXY": "http://172.30.0.1:18791",
+      "https_proxy": "http://172.30.0.1:18791",
+      "http_proxy": "http://172.30.0.1:18791",
+      "NO_PROXY": "localhost,127.0.0.1",
+      "no_proxy": "localhost,127.0.0.1"
+    }
+  },
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-opus-5",
+      "kwargs": {
+        "disallowed_tools": "WebSearch",
+        "max_turns": 300,
+        "version": "2.1.263"
+      },
+      "env": {
+        "HTTPS_PROXY": "http://172.30.0.1:18791",
+        "HTTP_PROXY": "http://172.30.0.1:18791",
+        "https_proxy": "http://172.30.0.1:18791",
+        "http_proxy": "http://172.30.0.1:18791",
+        "NO_PROXY": "localhost,127.0.0.1",
+        "no_proxy": "localhost,127.0.0.1",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-11133"
+    }
+  ]
+}

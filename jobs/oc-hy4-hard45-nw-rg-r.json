@@ -1,0 +1,68 @@
+{
+  "job_name": "oc-hy4-hard45-nw-rg-r",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 1,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "tencent/hy4-preview",
+      "kwargs": {
+        "version": "1.18.30",
+        "opencode_config": {
+          "provider": {
+            "tencent": {
+              "name": "Tencent HY4 (via hyfront)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8013/v1"
+              },
+              "models": {
+                "hy4-preview": {
+                  "name": "HY4-PREVIEW",
+                  "tool_call": true,
+                  "limit": {
+                    "context": 1024000,
+                    "output": 64000,
+                    "input": 960000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "options": {
+                    "reasoningEffort": "high"
+                  }
+                }
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "OPENAI_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/scikit-learn__scikit-learn-25102"
+    }
+  ]
+}

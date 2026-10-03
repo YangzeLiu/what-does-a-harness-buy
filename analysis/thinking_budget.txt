@@ -1,0 +1,100 @@
+thinking_budget.py -- reasoning share of agent output tokens, generated 2026-09-16
+denominator = exact output-token usage from the agent log (OC: per-step tokens.output, verified == result.json n_output_tokens
+              on 447/447 Qwen3.8 and 445/445 Qwen3.6 trials; CC: the result events usage.output_tokens,
+              444/446 exact vs result.json, the 2 exceptions differing by <1%)
+numerator   = the reasoning/thinking text tokenised with the serving models own tokenizer
+tokenizer   = resolved by thinking_budget.resolve_tokenizer(); a Qwen3.5-9B BPE and the serving
+              Qwen3.8-27B tokenizer agree to the token on this corpus
+intervals   = 95% CI on the mean log-ratio from t(n-1); at n=446 this is 0.27% wider
+              than the z=1.96 it replaced, which changes no printed digit
+note        = mini-swe-agent is not measurable this way: its console transcript keeps no separated reasoning block
+
+### cross-harness, same model (Qwen3.8-27B), same 447 pool, no-web
+== paired: oc-qwen-pool447-nw-rg  vs  cc-qwen-pool447-nw   common tasks 446
+   oc-qwen-pool447-nw-rg    output   19270194 ( 43207/task)  reasoning  82.9%  per-trial median share 80.6%
+   cc-qwen-pool447-nw       output   22843001 ( 51217/task)  reasoning  82.5%  per-trial median share 79.0%
+   output-token volume  B/A = 1.234x  [1.150, 1.325]  n=446
+   reasoning SHARE      B/A = 0.981x  [0.964, 0.998]  n=446
+
+### Qwen3.8-27B
+== oc-qwen-pool447-nw-rg   trials 447   assistant steps 21373
+   output tokens (exact, from step usage): 19323097
+   reasoning       16017872   82.9%   <- the thinking budget
+   assistant text    827307    4.3%
+   tool arguments   1910263    9.9%  (approx, re-serialised)
+   unattributed      567655    2.9%  (think tags + tool-call scaffolding)
+   per-trial reasoning share: median 80.6%  IQR [72.8, 85.8]  min 29.4  max 99.7
+   per-step reasoning tokens: median 107  p75 509  p90 1969  p99 8855  max 32001
+   steps with zero reasoning: 0 (0.0%)
+   reasoning-token concentration (share of ALL reasoning tokens):
+      steps with > 2000 reasoning tok:  2104 ( 9.8% of steps) carry  67.1% of reasoning
+      steps with > 8000 reasoning tok:   251 ( 1.2% of steps) carry  26.2% of reasoning
+      steps with >16000 reasoning tok:   100 ( 0.5% of steps) carry  16.1% of reasoning
+      trials with at least one >8000-token think: 171/447 (38.3%)
+   length-cut steps: 39   output 1248000   reasoning 1247998 = 100.0% of the cut budget
+   pass trials 307:  80.7% reasoning,    803 output tok/step,  48.8 steps/trial
+   fail trials 133:  86.7% reasoning,   1163 output tok/step,  44.8 steps/trial
+
+== cc-qwen-pool447-nw   trials 446   assistant steps 446
+   output tokens (exact, from step usage): 22843001
+   reasoning       18853440   82.5%   <- the thinking budget
+   assistant text    632777    2.8%
+   tool arguments   2665729   11.7%  (approx, re-serialised)
+   unattributed      691055    3.0%  (think tags + tool-call scaffolding)
+   per-trial reasoning share: median 79.0%  IQR [70.2, 85.0]  min 35.2  max 96.4
+   (per-step distribution unavailable: this harness reports no per-message
+    output-token count; the share above is trial-level and exact)
+
+== oc-qwen38-B-stock   trials 82   assistant steps 3743
+   output tokens (exact, from step usage): 4482184
+   reasoning        3858530   86.1%   <- the thinking budget
+   assistant text    172461    3.8%
+   tool arguments    349834    7.8%  (approx, re-serialised)
+   unattributed      101359    2.3%  (think tags + tool-call scaffolding)
+   per-trial reasoning share: median 84.0%  IQR [78.9, 88.2]  min 54.0  max 99.7
+   per-step reasoning tokens: median 123  p75 700  p90 2480  p99 16663  max 32000
+   steps with zero reasoning: 0 (0.0%)
+   reasoning-token concentration (share of ALL reasoning tokens):
+      steps with > 2000 reasoning tok:   478 (12.8% of steps) carry  76.0% of reasoning
+      steps with > 8000 reasoning tok:    88 ( 2.4% of steps) carry  38.8% of reasoning
+      steps with >16000 reasoning tok:    39 ( 1.0% of steps) carry  24.8% of reasoning
+      trials with at least one >8000-token think: 48/82 (58.5%)
+   length-cut steps: 11   output 352000   reasoning 352000 = 100.0% of the cut budget
+   pass trials  47:  83.0% reasoning,    938 output tok/step,  48.1 steps/trial
+   fail trials  33:  89.3% reasoning,   1605 output tok/step,  37.4 steps/trial
+
+== oc-qwen38-B-ac   trials 82   assistant steps 4408
+   output tokens (exact, from step usage): 5386141
+   reasoning        4632387   86.0%   <- the thinking budget
+   assistant text    230821    4.3%
+   tool arguments    407020    7.6%  (approx, re-serialised)
+   unattributed      115913    2.2%  (think tags + tool-call scaffolding)
+   per-trial reasoning share: median 84.3%  IQR [78.4, 88.0]  min 51.9  max 94.2
+   per-step reasoning tokens: median 129  p75 749  p90 2589  p99 14854  max 32000
+   steps with zero reasoning: 0 (0.0%)
+   reasoning-token concentration (share of ALL reasoning tokens):
+      steps with > 2000 reasoning tok:   586 (13.3% of steps) carry  75.6% of reasoning
+      steps with > 8000 reasoning tok:   113 ( 2.6% of steps) carry  38.9% of reasoning
+      steps with >16000 reasoning tok:    38 ( 0.9% of steps) carry  21.2% of reasoning
+      trials with at least one >8000-token think: 44/82 (53.7%)
+   length-cut steps: 11   output 352000   reasoning 351992 = 100.0% of the cut budget
+   pass trials  52:  84.2% reasoning,   1005 output tok/step,  52.3 steps/trial
+   fail trials  28:  87.0% reasoning,   1398 output tok/step,  56.3 steps/trial
+
+### Qwen3.6-35B-A3B
+== oc-qwen36-pool447-nw-rg   trials 445   assistant steps 16434
+   output tokens (exact, from step usage): 4223031
+   reasoning        1484023   35.1%   <- the thinking budget
+   assistant text    219003    5.2%
+   tool arguments   2173310   51.5%  (approx, re-serialised)
+   unattributed      346695    8.2%  (think tags + tool-call scaffolding)
+   per-trial reasoning share: median 32.6%  IQR [25.9, 40.6]  min 6.3  max 69.5
+   per-step reasoning tokens: median 25  p75 68  p90 232  p99 900  max 5154
+   steps with zero reasoning: 0 (0.0%)
+   reasoning-token concentration (share of ALL reasoning tokens):
+      steps with > 2000 reasoning tok:    27 ( 0.2% of steps) carry   5.3% of reasoning
+      steps with > 8000 reasoning tok:     0 ( 0.0% of steps) carry   0.0% of reasoning
+      steps with >16000 reasoning tok:     0 ( 0.0% of steps) carry   0.0% of reasoning
+      trials with at least one >8000-token think: 0/445 (0.0%)
+   pass trials 293:  33.9% reasoning,    230 output tok/step,  32.6 steps/trial
+   fail trials 147:  36.6% reasoning,    297 output tok/step,  45.1 steps/trial

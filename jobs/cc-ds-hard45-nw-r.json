@@ -1,0 +1,28 @@
+{
+  "job_name": "cc-ds-hard45-nw-r",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 2,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "deepseek-v4-flash",
+      "kwargs": {
+        "disallowed_tools": "WebSearch",
+        "max_turns": 300
+      },
+      "env": {
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-10554"
+    },
+    {
+      "path": "tasks_noweb/django__django-16263"
+    }
+  ]
+}

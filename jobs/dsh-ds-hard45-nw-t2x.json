@@ -1,0 +1,28 @@
+{
+  "job_name": "dsh-ds-hard45-nw-t2x",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 2.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 3,
+  "agents": [
+    {
+      "import_path": "dsh_agent:DshAgent",
+      "model_name": "deepseek/deepseek-v4-flash",
+      "kwargs": {
+        "version": "0.1.2-rc.1",
+        "soft_timeout_sec": 5520
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-12325"
+    },
+    {
+      "path": "tasks_noweb/django__django-16263"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-6992"
+    }
+  ]
+}

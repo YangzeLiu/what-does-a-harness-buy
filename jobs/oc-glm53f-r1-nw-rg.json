@@ -1,0 +1,68 @@
+{
+  "job_name": "oc-glm53f-r1-nw-rg",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 1,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "zhipu/glm-5.3-flash",
+      "kwargs": {
+        "version": "1.18.30",
+        "opencode_config": {
+          "provider": {
+            "zhipu": {
+              "name": "Zhipu GLM (via glmfront)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8011/v1"
+              },
+              "models": {
+                "glm-5.3-flash": {
+                  "name": "GLM-5.3-FLASH",
+                  "tool_call": true,
+                  "limit": {
+                    "context": 131072,
+                    "output": 32768,
+                    "input": 98000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "options": {
+                    "reasoningEffort": "high"
+                  }
+                }
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "ZHIPU_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/astropy__astropy-13398"
+    }
+  ]
+}

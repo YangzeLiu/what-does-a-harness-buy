@@ -1,0 +1,28 @@
+{
+  "job_name": "cc-ds-smoke",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 2,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "deepseek-v4-flash",
+      "env": {
+        "HTTPS_PROXY": "http://172.17.0.1:18790",
+        "HTTP_PROXY": "http://172.17.0.1:18790",
+        "NO_PROXY": "localhost,127.0.0.1,api.deepseek.com,registry.npmjs.org,nodejs.org,deb.nodesource.com,archive.ubuntu.com,security.ubuntu.com,deb.debian.org,ports.ubuntu.com,npmmirror.com,pypi.org,files.pythonhosted.org",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "name": "swe-bench/swe-bench-verified",
+      "ref": "sha256:b934b0cc3dc800fe945eaf9f1623329db97ee3133c706d20644524c7759fb341",
+      "task_names": [
+        "swe-bench/django__django-11133",
+        "swe-bench/sympy__sympy-13091"
+      ]
+    }
+  ]
+}

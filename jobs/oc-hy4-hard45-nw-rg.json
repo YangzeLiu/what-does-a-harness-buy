@@ -1,0 +1,200 @@
+{
+  "job_name": "oc-hy4-hard45-nw-rg",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 8,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "tencent/hy4-preview",
+      "kwargs": {
+        "version": "1.18.30",
+        "opencode_config": {
+          "provider": {
+            "tencent": {
+              "name": "Tencent HY4 (via hyfront)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8013/v1"
+              },
+              "models": {
+                "hy4-preview": {
+                  "name": "HY4-PREVIEW",
+                  "tool_call": true,
+                  "limit": {
+                    "context": 1024000,
+                    "output": 64000,
+                    "input": 960000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "options": {
+                    "reasoningEffort": "high"
+                  }
+                }
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "OPENAI_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/astropy__astropy-13398"
+    },
+    {
+      "path": "tasks_noweb/astropy__astropy-13579"
+    },
+    {
+      "path": "tasks_noweb/astropy__astropy-14369"
+    },
+    {
+      "path": "tasks_noweb/django__django-10554"
+    },
+    {
+      "path": "tasks_noweb/django__django-11138"
+    },
+    {
+      "path": "tasks_noweb/django__django-11400"
+    },
+    {
+      "path": "tasks_noweb/django__django-11885"
+    },
+    {
+      "path": "tasks_noweb/django__django-12325"
+    },
+    {
+      "path": "tasks_noweb/django__django-12708"
+    },
+    {
+      "path": "tasks_noweb/django__django-13128"
+    },
+    {
+      "path": "tasks_noweb/django__django-13212"
+    },
+    {
+      "path": "tasks_noweb/django__django-13344"
+    },
+    {
+      "path": "tasks_noweb/django__django-13449"
+    },
+    {
+      "path": "tasks_noweb/django__django-13837"
+    },
+    {
+      "path": "tasks_noweb/django__django-14007"
+    },
+    {
+      "path": "tasks_noweb/django__django-14011"
+    },
+    {
+      "path": "tasks_noweb/django__django-14631"
+    },
+    {
+      "path": "tasks_noweb/django__django-15128"
+    },
+    {
+      "path": "tasks_noweb/django__django-15268"
+    },
+    {
+      "path": "tasks_noweb/django__django-15503"
+    },
+    {
+      "path": "tasks_noweb/django__django-15629"
+    },
+    {
+      "path": "tasks_noweb/django__django-15957"
+    },
+    {
+      "path": "tasks_noweb/django__django-16263"
+    },
+    {
+      "path": "tasks_noweb/django__django-16560"
+    },
+    {
+      "path": "tasks_noweb/django__django-16631"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-3993"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-6992"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-4551"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-8898"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-10356"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-5787"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-6197"
+    },
+    {
+      "path": "tasks_noweb/scikit-learn__scikit-learn-25102"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-11510"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-7590"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-8548"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9229"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9461"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-12489"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-13852"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-13878"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-14248"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-16597"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-17630"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-18199"
+    }
+  ]
+}

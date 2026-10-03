@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper."
+title: "What Does a Harness Buy? Tokens, Mostly."
+authors:
+  - family-names: Liu
+    given-names: Yangze
+    affiliation: Shandong University
+  - family-names: Han
+    given-names: Zhongyi
+    affiliation: Shandong University
+date-released: "2026-10-03"
+repository-code: "https://github.com/YangzeLiu/what-does-a-harness-buy"
+license:
+  - MIT
+  - CC-BY-4.0
+type: software
+preferred-citation:
+  type: generic
+  title: "What Does a Harness Buy? Tokens, Mostly."
+  authors:
+    - family-names: Liu
+      given-names: Yangze
+    - family-names: Han
+      given-names: Zhongyi
+  year: 2026
+  notes: "arXiv preprint, identifier to be added"

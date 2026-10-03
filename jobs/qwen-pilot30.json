@@ -1,0 +1,85 @@
+{
+  "job_name": "qwen-pilot30",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 3,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "qwen-local/qwen3.8-27b",
+      "kwargs": {
+        "opencode_config": {
+          "provider": {
+            "qwen-local": {
+              "models": {
+                "qwen3.8-27b": {
+                  "limit": {
+                    "context": 131072,
+                    "output": 32768
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "name": "Qwen3.8-27B",
+                  "tool_call": true
+                }
+              },
+              "name": "Qwen local (host-a vLLM)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:18002/v1"
+              }
+            }
+          }
+        }
+      },
+      "env": {
+        "QWEN_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "name": "swe-bench/swe-bench-verified",
+      "ref": "sha256:b934b0cc3dc800fe945eaf9f1623329db97ee3133c706d20644524c7759fb341",
+      "task_names": [
+        "swe-bench/astropy__astropy-14096",
+        "swe-bench/django__django-11066",
+        "swe-bench/django__django-11133",
+        "swe-bench/django__django-11820",
+        "swe-bench/django__django-12209",
+        "swe-bench/django__django-15741",
+        "swe-bench/django__django-17087",
+        "swe-bench/django__django-11211",
+        "swe-bench/django__django-12774",
+        "swe-bench/django__django-13786",
+        "swe-bench/django__django-13810",
+        "swe-bench/django__django-16032",
+        "swe-bench/django__django-16136",
+        "swe-bench/django__django-7530",
+        "swe-bench/django__django-13837",
+        "swe-bench/django__django-15629",
+        "swe-bench/matplotlib__matplotlib-25332",
+        "swe-bench/matplotlib__matplotlib-21568",
+        "swe-bench/pydata__xarray-3305",
+        "swe-bench/pytest-dev__pytest-5840",
+        "swe-bench/scikit-learn__scikit-learn-25232",
+        "swe-bench/scikit-learn__scikit-learn-14087",
+        "swe-bench/sphinx-doc__sphinx-10435",
+        "swe-bench/sphinx-doc__sphinx-8593",
+        "swe-bench/sympy__sympy-17139",
+        "swe-bench/sympy__sympy-17655",
+        "swe-bench/sympy__sympy-13091",
+        "swe-bench/sympy__sympy-18698",
+        "swe-bench/sympy__sympy-19346",
+        "swe-bench/sympy__sympy-12489"
+      ]
+    }
+  ]
+}

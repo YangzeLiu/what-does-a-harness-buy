@@ -1,0 +1,95 @@
+B38  stock=oc-qwen38-B-stock  ac=oc-qwen38-B-ac  tasks in both arms=41
+trials: stock 82, ac 82 (target 82 each)
+wall-clock = the agent_execution phase only (started_at -> finished_at), not the
+whole trial; Wilcoxon p-values are EXACT (2^m sign enumeration, tie-averaged ranks);
+cost intervals are t(n-1) on the mean log-ratio.
+labels: data/trials.csv (overrides result.json)
+
+== exceptions per arm (protocol rule 3)
+   stock trials 82   usable 80   VOIDED(INFRA) 1   unscored-but-not-INFRA 1
+         AgentVerifierOverlap: 1   other exception types: NonZeroAgentExitCodeError=1
+         VOID  sympy__sympy-23413__3TnxUWa        AgentVerifierOverlap
+         UNSC  matplotlib__matplotlib-24627__9kS5VWH NonZeroAgentExitCodeError (scored=False reward=None)
+   ac    trials 82   usable 82   VOIDED(INFRA) 0   unscored-but-not-INFRA 0
+         AgentVerifierOverlap: 0   other exception types: AgentTimeoutError=1, NonZeroAgentExitCodeError=1
+
+== (i) ITT over all tasks with >=1 usable attempt in both arms  (PRIMARY)
+   tasks n=41   mean per-task reward: stock 0.5854  ac 0.6341   delta +0.0488
+   Wilcoxon signed-rank: non-zero diffs 8, two-sided p = 0.2891  [exact]
+   (for the record, the normal approximation this used to report: p = 0.1817)
+   direction: ac better on 6, stock better on 2, tied 33
+
+   [comparability] canonical-attempt McNemar: b(ac-only)=2 c(stock-only)=2 p=1.0000  flip=0.098
+
+== (ii) round-1 trigger rate
+   ac    (logged)          12/ 82 =  14.6% [8.6, 23.9]  rule(a)=6 rule(b)=6
+   stock (reconstructed)   12/ 80 =  15.0% [8.8, 24.4]  rule(a)=8 rule(b)=4
+     same, all-with-log:   12/ 82 =  14.6%   <- same trials as analysis/b38_trigger.py (all with a log; +2 voided/unscored)
+   parent job oc-qwen-pool447-nw-rg unconditional rate: 42/447 = 9.4%  (all trials with a log)
+   -> selection enriches the trigger rate by 1.58x
+
+== (iii) per-protocol, NON-RANDOMISED (tasks where the ac arm triggered in >=1 attempt)
+   tasks n=11   mean delta +0.0000   Wilcoxon non-zero 2, p = 1.0000  [exact]
+   (for the record, the normal approximation this used to report: p = 1.0000)
+   NOTE: conditions on a post-randomisation variable; mechanism check, not a causal estimate.
+
+== cost (a) PRIMARY -- ITT, paired per task over ALL usable attempts
+   what turning the switch on costs, on the same task set as the ITT contrast.
+   wall-clock     1.126x  [0.962, 1.318]  n=41
+   steps          1.225x  [1.094, 1.371]  n=41
+   output tokens  1.145x  [0.976, 1.342]  n=41
+   input tokens   1.301x  [1.111, 1.524]  n=41
+
+== cost (b) SENSITIVITY -- both-pass pairs only (the paper's efficiency convention)
+   restricts to tasks both arms solved, so it conditions on the outcome; reported
+   for comparability with the rest of the paper, not as the ablation's cost.
+   wall-clock     1.107x  [0.852, 1.439]  n=27
+   steps          1.091x  [1.004, 1.187]  n=27
+   output tokens  1.137x  [0.892, 1.450]  n=27
+   input tokens   1.153x  [0.992, 1.340]  n=27
+
+   geometric mean ac/stock; 95% CI on the mean log-ratio from t(n-1).
+   A/A floor under unmatched host load is 1.10-1.16x; these arms ARE interleaved.
+
+== per task: stock_mean ac_mean (attempts), ac trigger rules
+   astropy__astropy-13033             0.00 -> 0.00  (2/2)  trig=a
+   astropy__astropy-8707              1.00 -> 1.00  (2/2)  trig=b
+   django__django-10973               1.00 -> 0.50  (2/2)  trig=-
+   django__django-11095               1.00 -> 1.00  (2/2)  trig=-
+   django__django-11477               0.00 -> 0.00  (2/2)  trig=-
+   django__django-11848               0.00 -> 0.50  (2/2)  trig=-
+   django__django-12039               1.00 -> 1.00  (2/2)  trig=-
+   django__django-13023               0.50 -> 0.50  (2/2)  trig=a
+   django__django-13033               1.00 -> 1.00  (2/2)  trig=-
+   django__django-13315               1.00 -> 1.00  (2/2)  trig=-
+   django__django-13513               0.00 -> 0.00  (2/2)  trig=b
+   django__django-13551               0.00 -> 0.50  (2/2)  trig=a
+   django__django-13809               1.00 -> 1.00  (2/2)  trig=-
+   django__django-14034               0.00 -> 0.00  (2/2)  trig=-
+   django__django-14315               0.00 -> 0.00  (2/2)  trig=-
+   django__django-14725               0.00 -> 0.00  (2/2)  trig=-
+   django__django-14771               0.00 -> 0.00  (2/2)  trig=-
+   django__django-15022               1.00 -> 1.00  (2/2)  trig=-
+   django__django-15037               0.50 -> 1.00  (2/2)  trig=-
+   django__django-15382               1.00 -> 1.00  (2/2)  trig=-
+   django__django-15554               1.00 -> 1.00  (2/2)  trig=-
+   matplotlib__matplotlib-20676       0.00 -> 0.00  (2/2)  trig=-
+   matplotlib__matplotlib-22719       1.00 -> 1.00  (2/2)  trig=-
+   matplotlib__matplotlib-22871       1.00 -> 1.00  (2/2)  trig=b
+   matplotlib__matplotlib-24627       1.00 -> 1.00  (1/2)  trig=-
+   pytest-dev__pytest-5631            1.00 -> 1.00  (2/2)  trig=-
+   pytest-dev__pytest-5840            0.00 -> 0.00  (2/2)  trig=-
+   pytest-dev__pytest-7236            1.00 -> 1.00  (2/2)  trig=-
+   pytest-dev__pytest-7324            0.50 -> 0.50  (2/2)  trig=a
+   pytest-dev__pytest-7521            1.00 -> 1.00  (2/2)  trig=-
+   pytest-dev__pytest-7571            1.00 -> 1.00  (2/2)  trig=-
+   scikit-learn__scikit-learn-10297   1.00 -> 1.00  (2/2)  trig=-
+   scikit-learn__scikit-learn-25931   0.50 -> 1.00  (2/2)  trig=-
+   sphinx-doc__sphinx-7985            0.00 -> 0.00  (2/2)  trig=b
+   sympy__sympy-13877                 0.50 -> 1.00  (2/2)  trig=-
+   sympy__sympy-14976                 0.50 -> 0.00  (2/2)  trig=b
+   sympy__sympy-15017                 0.50 -> 0.50  (2/2)  trig=-
+   sympy__sympy-17655                 1.00 -> 1.00  (2/2)  trig=a
+   sympy__sympy-19783                 0.50 -> 1.00  (2/2)  trig=-
+   sympy__sympy-22914                 1.00 -> 1.00  (2/2)  trig=-
+   sympy__sympy-23413                 0.00 -> 0.00  (1/2)  trig=a

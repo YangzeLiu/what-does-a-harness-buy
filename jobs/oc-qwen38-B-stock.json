@@ -1,0 +1,184 @@
+{
+  "job_name": "oc-qwen38-B-stock",
+  "jobs_dir": "results/raw/jobs",
+  "n_attempts": 2,
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "qwen-local/qwen3.8-27b",
+      "kwargs": {
+        "opencode_config": {
+          "provider": {
+            "qwen-local": {
+              "models": {
+                "qwen3.8-27b": {
+                  "limit": {
+                    "context": 131072,
+                    "output": 32768,
+                    "input": 98000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "name": "Qwen3.8-27B",
+                  "tool_call": true
+                }
+              },
+              "name": "Qwen local (host-a vLLM :8002)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8002/v1"
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "QWEN_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_pool/astropy__astropy-13033"
+    },
+    {
+      "path": "tasks_pool/astropy__astropy-8707"
+    },
+    {
+      "path": "tasks_pool/django__django-10973"
+    },
+    {
+      "path": "tasks_pool/django__django-11095"
+    },
+    {
+      "path": "tasks_pool/django__django-11477"
+    },
+    {
+      "path": "tasks_pool/django__django-11848"
+    },
+    {
+      "path": "tasks_pool/django__django-12039"
+    },
+    {
+      "path": "tasks_pool/django__django-13023"
+    },
+    {
+      "path": "tasks_pool/django__django-13033"
+    },
+    {
+      "path": "tasks_pool/django__django-13315"
+    },
+    {
+      "path": "tasks_pool/django__django-13513"
+    },
+    {
+      "path": "tasks_pool/django__django-13551"
+    },
+    {
+      "path": "tasks_pool/django__django-13809"
+    },
+    {
+      "path": "tasks_pool/django__django-14034"
+    },
+    {
+      "path": "tasks_pool/django__django-14315"
+    },
+    {
+      "path": "tasks_pool/django__django-14725"
+    },
+    {
+      "path": "tasks_pool/django__django-14771"
+    },
+    {
+      "path": "tasks_pool/django__django-15022"
+    },
+    {
+      "path": "tasks_pool/django__django-15037"
+    },
+    {
+      "path": "tasks_pool/django__django-15382"
+    },
+    {
+      "path": "tasks_pool/django__django-15554"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-20676"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-22719"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-22871"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-24627"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-5631"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-5840"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7236"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7324"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7521"
+    },
+    {
+      "path": "tasks_pool/pytest-dev__pytest-7571"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-10297"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-25931"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-7985"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-13877"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-14976"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-15017"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-17655"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-19783"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-22914"
+    },
+    {
+      "path": "tasks_pool/sympy__sympy-23413"
+    }
+  ]
+}

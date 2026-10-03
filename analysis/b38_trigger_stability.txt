@@ -1,0 +1,18 @@
+# analysis/b38_trigger_stability.py -- regenerated 2026-09-16 on the completed arms
+# jobs root: $HARNESS_JOBS_ROOT (raw Harbor job trees, not in this repository)   tasks: scripts/B38_tasks.txt
+
+parent = oc-qwen-pool447-nw-rg   rerun = oc-qwen38-B-stock
+one trial per task in each run: the CHRONOLOGICALLY first attempt (started_at)
+B38 tasks with a first-attempt log in both: 41 of 41
+
+does the selection variable itself come back?
+   length cut: parent 33/41 (80%)   rerun 3/41 (7%)
+
+cross-run rank correlation on measures that are NOT censored at the 32000 cut:
+   total reasoning tokens     parent median   38576   rerun median   35680   rho = +0.205
+   median per-step reasoning  parent median      96   rerun median     106   rho = +0.268
+   steps per trial            parent median      11   rerun median      42   rho = +0.195
+   (max per-step reasoning is deliberately omitted: censored at 32000 in the parent)
+
+what the cut costs, visible in the step counts above: a cut ends the OpenCode
+loop, so the parent trials stop early while the same tasks run to length on rerun.

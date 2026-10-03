@@ -1,0 +1,17 @@
+{
+  "job_name": "oc-ds-nw-smoke-k2",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 1,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "deepseek/deepseek-v4-flash"
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-11133"
+    }
+  ]
+}

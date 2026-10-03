@@ -1,0 +1,17 @@
+{
+  "job_name": "oc-ds-hard45-nw-r2",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 6,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "deepseek/deepseek-v4-flash"
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-13128"
+    }
+  ]
+}

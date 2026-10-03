@@ -1,0 +1,178 @@
+{
+  "job_name": "cc-opus-hard45-nw",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "environment": {
+    "type": "docker",
+    "extra_docker_compose": [
+      "noweb_compose.yaml"
+    ]
+  },
+  "verifier": {
+    "env": {
+      "HTTPS_PROXY": "http://172.30.0.1:18791",
+      "HTTP_PROXY": "http://172.30.0.1:18791",
+      "https_proxy": "http://172.30.0.1:18791",
+      "http_proxy": "http://172.30.0.1:18791",
+      "NO_PROXY": "localhost,127.0.0.1",
+      "no_proxy": "localhost,127.0.0.1"
+    }
+  },
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-opus-5",
+      "kwargs": {
+        "disallowed_tools": "WebSearch",
+        "max_turns": 300,
+        "version": "2.1.263"
+      },
+      "env": {
+        "HTTPS_PROXY": "http://172.30.0.1:18791",
+        "HTTP_PROXY": "http://172.30.0.1:18791",
+        "https_proxy": "http://172.30.0.1:18791",
+        "http_proxy": "http://172.30.0.1:18791",
+        "NO_PROXY": "localhost,127.0.0.1",
+        "no_proxy": "localhost,127.0.0.1",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/astropy__astropy-13398"
+    },
+    {
+      "path": "tasks_noweb/astropy__astropy-13579"
+    },
+    {
+      "path": "tasks_noweb/astropy__astropy-14369"
+    },
+    {
+      "path": "tasks_noweb/django__django-10554"
+    },
+    {
+      "path": "tasks_noweb/django__django-11138"
+    },
+    {
+      "path": "tasks_noweb/django__django-11400"
+    },
+    {
+      "path": "tasks_noweb/django__django-11885"
+    },
+    {
+      "path": "tasks_noweb/django__django-12325"
+    },
+    {
+      "path": "tasks_noweb/django__django-12708"
+    },
+    {
+      "path": "tasks_noweb/django__django-13128"
+    },
+    {
+      "path": "tasks_noweb/django__django-13212"
+    },
+    {
+      "path": "tasks_noweb/django__django-13344"
+    },
+    {
+      "path": "tasks_noweb/django__django-13449"
+    },
+    {
+      "path": "tasks_noweb/django__django-13837"
+    },
+    {
+      "path": "tasks_noweb/django__django-14007"
+    },
+    {
+      "path": "tasks_noweb/django__django-14011"
+    },
+    {
+      "path": "tasks_noweb/django__django-14631"
+    },
+    {
+      "path": "tasks_noweb/django__django-15128"
+    },
+    {
+      "path": "tasks_noweb/django__django-15268"
+    },
+    {
+      "path": "tasks_noweb/django__django-15503"
+    },
+    {
+      "path": "tasks_noweb/django__django-15629"
+    },
+    {
+      "path": "tasks_noweb/django__django-15957"
+    },
+    {
+      "path": "tasks_noweb/django__django-16263"
+    },
+    {
+      "path": "tasks_noweb/django__django-16560"
+    },
+    {
+      "path": "tasks_noweb/django__django-16631"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-3993"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-6992"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-4551"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-8898"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-10356"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-5787"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-6197"
+    },
+    {
+      "path": "tasks_noweb/scikit-learn__scikit-learn-25102"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-11510"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-7590"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-8548"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9229"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9461"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-12489"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-13852"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-13878"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-14248"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-16597"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-17630"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-18199"
+    }
+  ]
+}

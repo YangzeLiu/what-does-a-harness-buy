@@ -1,0 +1,71 @@
+{
+  "job_name": "cc-ds-hard45",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 3,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "deepseek-v4-flash",
+      "env": {
+        "HTTPS_PROXY": "http://172.17.0.1:18790",
+        "HTTP_PROXY": "http://172.17.0.1:18790",
+        "NO_PROXY": "localhost,127.0.0.1,api.deepseek.com,registry.npmjs.org,nodejs.org,deb.nodesource.com,archive.ubuntu.com,security.ubuntu.com,deb.debian.org,ports.ubuntu.com,npmmirror.com,pypi.org,files.pythonhosted.org",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "name": "swe-bench/swe-bench-verified",
+      "ref": "sha256:b934b0cc3dc800fe945eaf9f1623329db97ee3133c706d20644524c7759fb341",
+      "task_names": [
+        "swe-bench/astropy__astropy-13398",
+        "swe-bench/astropy__astropy-13579",
+        "swe-bench/astropy__astropy-14369",
+        "swe-bench/django__django-10554",
+        "swe-bench/django__django-11138",
+        "swe-bench/django__django-11400",
+        "swe-bench/django__django-11885",
+        "swe-bench/django__django-12325",
+        "swe-bench/django__django-12708",
+        "swe-bench/django__django-13128",
+        "swe-bench/django__django-13212",
+        "swe-bench/django__django-13344",
+        "swe-bench/django__django-13449",
+        "swe-bench/django__django-13837",
+        "swe-bench/django__django-14007",
+        "swe-bench/django__django-14011",
+        "swe-bench/django__django-14631",
+        "swe-bench/django__django-15128",
+        "swe-bench/django__django-15268",
+        "swe-bench/django__django-15503",
+        "swe-bench/django__django-15629",
+        "swe-bench/django__django-15957",
+        "swe-bench/django__django-16263",
+        "swe-bench/django__django-16560",
+        "swe-bench/django__django-16631",
+        "swe-bench/pydata__xarray-3993",
+        "swe-bench/pydata__xarray-6992",
+        "swe-bench/pylint-dev__pylint-4551",
+        "swe-bench/pylint-dev__pylint-8898",
+        "swe-bench/pytest-dev__pytest-10356",
+        "swe-bench/pytest-dev__pytest-5787",
+        "swe-bench/pytest-dev__pytest-6197",
+        "swe-bench/scikit-learn__scikit-learn-25102",
+        "swe-bench/sphinx-doc__sphinx-11510",
+        "swe-bench/sphinx-doc__sphinx-7590",
+        "swe-bench/sphinx-doc__sphinx-8548",
+        "swe-bench/sphinx-doc__sphinx-9229",
+        "swe-bench/sphinx-doc__sphinx-9461",
+        "swe-bench/sympy__sympy-12489",
+        "swe-bench/sympy__sympy-13852",
+        "swe-bench/sympy__sympy-13878",
+        "swe-bench/sympy__sympy-14248",
+        "swe-bench/sympy__sympy-16597",
+        "swe-bench/sympy__sympy-17630",
+        "swe-bench/sympy__sympy-18199"
+      ]
+    }
+  ]
+}

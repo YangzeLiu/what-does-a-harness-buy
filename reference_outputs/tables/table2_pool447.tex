@@ -1,0 +1,15 @@
+\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}llrrrrrrcc@{}}
+\toprule
+Model & Pair $A-B$ & $n$ & $A$ & $B$ & $b$ & $c$ & $\Delta$ (pp) & McNemar $p$ & Verdict \\
+\midrule
+Qwen3.6-35B-A3B & CC$-$mini & 445 & 310 & 318 & 26 & 34 & $-$1.8 [$-$5.2, +1.6] & .37 & equivalent \\
+ & CC$-$OC & 445 & 310 & 297 & 43 & 30 & +2.9 [$-$0.9, +6.7] & .16 & inconclusive \\
+ & mini$-$OC & 445 & 318 & 297 & 45 & 24 & +4.7 [+1.1, +8.4] & .02 & inferior $B$ \\
+\addlinespace
+Qwen3.8-27B & CC$-$mini & 444 & 347 & 353 & 17 & 23 & $-$1.4 [$-$4.2, +1.5] & .43 & equivalent \\
+ & CC$-$OC & 444 & 347 & 312 & 52 & 17 & +7.9 [+4.3, +11.5] & $<$.001 & inferior $B$ \\
+ & mini$-$OC & 445 & 353 & 312 & 57 & 16 & +9.2 [+5.5, +12.9] & $<$.001 & inferior $B$ \\
+\addlinespace
+\bottomrule
+\end{tabular}

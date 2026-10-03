@@ -1,0 +1,59 @@
+{
+  "job_name": "cc-dspro-probe13-nw",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 7,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "deepseek-v4-pro",
+      "kwargs": {
+        "disallowed_tools": "WebSearch"
+      },
+      "env": {
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-12325"
+    },
+    {
+      "path": "tasks_noweb/django__django-14011"
+    },
+    {
+      "path": "tasks_noweb/django__django-15957"
+    },
+    {
+      "path": "tasks_noweb/django__django-16631"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-6992"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-4551"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-8898"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-7590"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9229"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-14248"
+    },
+    {
+      "path": "tasks_noweb/astropy__astropy-13579"
+    },
+    {
+      "path": "tasks_noweb/django__django-13449"
+    },
+    {
+      "path": "tasks_noweb/django__django-14631"
+    }
+  ]
+}

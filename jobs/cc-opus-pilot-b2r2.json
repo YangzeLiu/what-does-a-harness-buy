@@ -1,0 +1,46 @@
+{
+  "job_name": "cc-opus-pilot-b2r2",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 2,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-opus-5",
+      "env": {
+        "HTTPS_PROXY": "http://172.17.0.1:18790",
+        "HTTP_PROXY": "http://172.17.0.1:18790",
+        "NO_PROXY": "localhost,127.0.0.1,registry.npmjs.org,nodejs.org,deb.nodesource.com,archive.ubuntu.com,security.ubuntu.com,deb.debian.org,ports.ubuntu.com,npmmirror.com,pypi.org,files.pythonhosted.org"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "name": "swe-bench/swe-bench-verified",
+      "ref": "sha256:b934b0cc3dc800fe945eaf9f1623329db97ee3133c706d20644524c7759fb341",
+      "task_names": [
+        "swe-bench/django__django-11066",
+        "swe-bench/django__django-11133",
+        "swe-bench/django__django-11211",
+        "swe-bench/django__django-11820",
+        "swe-bench/django__django-12209",
+        "swe-bench/django__django-12774",
+        "swe-bench/django__django-13786",
+        "swe-bench/django__django-13810",
+        "swe-bench/django__django-13837",
+        "swe-bench/django__django-15629",
+        "swe-bench/django__django-16136",
+        "swe-bench/django__django-17087",
+        "swe-bench/pytest-dev__pytest-5840",
+        "swe-bench/sphinx-doc__sphinx-10435",
+        "swe-bench/sphinx-doc__sphinx-8593",
+        "swe-bench/sympy__sympy-13091",
+        "swe-bench/sympy__sympy-18698",
+        "swe-bench/sympy__sympy-19346",
+        "swe-bench/scikit-learn__scikit-learn-14087",
+        "swe-bench/scikit-learn__scikit-learn-25232",
+        "swe-bench/matplotlib__matplotlib-21568"
+      ]
+    }
+  ]
+}

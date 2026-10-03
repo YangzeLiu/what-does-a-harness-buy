@@ -1,0 +1,24 @@
+# analysis/cutoff_audit.py -- regenerated 2026-09-16
+# jobs root: $HARNESS_JOBS_ROOT (raw Harbor job trees, not in this repository)
+
+== cc-qwen-pool447-nw
+   trials scanned          : 447
+   trials with >=1 cut     : 52  (11.6 %)
+   cut events              : 66
+   trials ending on the cut: 1
+   pass rate with a cut    : 69.2 % [55.7, 80.1] (36/52)
+   pass rate without       : 79.1 % [74.8, 82.9] (311/393)
+   claude-code breakdown   : 64 resume injections, 2 cap errors (1 of them on the compaction request)
+   terminal trials         : sympy__sympy-21612__RKAshhB
+   INFRA-excluded          : 2
+
+== oc-qwen-pool447-nw-rg
+   trials scanned          : 447
+   trials with >=1 cut     : 38  (8.5 %)
+   cut events              : 39
+   trials ending on the cut: 34
+   pass rate with a cut    : 7.9 % [2.7, 20.8] (3/38)
+   pass rate without       : 75.9 % [71.5, 79.8] (309/407)
+   terminal trials         : astropy__astropy-13033__ojVK2j3, astropy__astropy-8707__4Aq5Hoi, django__django-11477__jhrXGgy, django__django-11848__xq6Zkas, django__django-12039__t4acZ2K, django__django-13023__vAJFvMK, django__django-13315__RXZipBm, django__django-13551__y8Tkvi6, django__django-13809__gVWTzop, django__django-14034__mxga4ao, django__django-14315__KGeFhrn, django__django-14725__asVrUbe, django__django-14771__BpjTgFr, django__django-15037__uvKcGh7, django__django-15382__m65j8cn, django__django-15554__se6zA4K, matplotlib__matplotlib-20676__DGE4ddM, matplotlib__matplotlib-22871__s9bSwNY, pytest-dev__pytest-5809__V8FgAPy, pytest-dev__pytest-5840__Q4SyZ4y, pytest-dev__pytest-7236__UbPbU8e, pytest-dev__pytest-7324__iiCpqx2, pytest-dev__pytest-7521__hzTJj5j, pytest-dev__pytest-7571__y2EWVBE, scikit-learn__scikit-learn-10297__TPtzRBG, scikit-learn__scikit-learn-25931__aCztpnv, sphinx-doc__sphinx-7985__b69qjMr, sympy__sympy-13877__XUfLGvG, sympy__sympy-14976__fxvpZxu, sympy__sympy-15017__mooegX4, sympy__sympy-17655__wGouBXr, sympy__sympy-19783__pyxVsw6, sympy__sympy-22914__A2wxqAs, sympy__sympy-23413__KVmMJR6
+   INFRA-excluded          : 2
+

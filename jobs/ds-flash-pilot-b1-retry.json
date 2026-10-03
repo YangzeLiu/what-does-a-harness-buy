@@ -1,0 +1,23 @@
+{
+  "job_name": "ds-flash-pilot-b1-retry",
+  "jobs_dir": "results/raw/jobs",
+  "n_concurrent_trials": 2,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "deepseek/deepseek-v4-flash"
+    }
+  ],
+  "datasets": [
+    {
+      "name": "swe-bench/swe-bench-verified",
+      "ref": "sha256:b934b0cc3dc800fe945eaf9f1623329db97ee3133c706d20644524c7759fb341",
+      "task_names": [
+        "swe-bench/sphinx-doc__sphinx-10435",
+        "swe-bench/django__django-11820",
+        "swe-bench/django__django-11066",
+        "swe-bench/matplotlib__matplotlib-21568"
+      ]
+    }
+  ]
+}

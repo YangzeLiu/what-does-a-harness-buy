@@ -1,0 +1,78 @@
+{
+  "job_name": "oc-qwen36-pool447-nw-rg-r",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 6.0,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "qwen-local/qwen3.6-35b-a3b",
+      "kwargs": {
+        "opencode_config": {
+          "provider": {
+            "qwen-local": {
+              "models": {
+                "qwen3.6-35b-a3b": {
+                  "limit": {
+                    "context": 131072,
+                    "output": 32768,
+                    "input": 98000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "name": "Qwen3.6-35B-A3B",
+                  "tool_call": true
+                }
+              },
+              "name": "Qwen local (host-a vLLM)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8002/v1"
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "QWEN_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_pool/django__django-13315"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-25960"
+    },
+    {
+      "path": "tasks_pool/matplotlib__matplotlib-26291"
+    },
+    {
+      "path": "tasks_pool/pydata__xarray-6744"
+    },
+    {
+      "path": "tasks_pool/scikit-learn__scikit-learn-25232"
+    },
+    {
+      "path": "tasks_pool/sphinx-doc__sphinx-8120"
+    }
+  ]
+}

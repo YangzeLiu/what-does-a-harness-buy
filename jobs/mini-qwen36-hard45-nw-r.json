@@ -1,0 +1,92 @@
+{
+  "job_name": "mini-qwen36-hard45-nw-r",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 8,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "mini-swe-agent",
+      "model_name": "openai/qwen3.6-35b-a3b",
+      "kwargs": {
+        "config": {
+          "agent": {
+            "step_limit": 300
+          }
+        }
+      },
+      "env": {
+        "OPENAI_API_KEY": "<REDACTED>",
+        "OPENAI_BASE_URL": "https://172.17.0.1:8443/v1",
+        "SSL_VERIFY": "false"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-16263"
+    },
+    {
+      "path": "tasks_noweb/pydata__xarray-3993"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-4551"
+    },
+    {
+      "path": "tasks_noweb/pylint-dev__pylint-8898"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-10356"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-5787"
+    },
+    {
+      "path": "tasks_noweb/pytest-dev__pytest-6197"
+    },
+    {
+      "path": "tasks_noweb/scikit-learn__scikit-learn-25102"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-11510"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-7590"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-8548"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9229"
+    },
+    {
+      "path": "tasks_noweb/sphinx-doc__sphinx-9461"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-12489"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-13852"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-13878"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-14248"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-16597"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-17630"
+    },
+    {
+      "path": "tasks_noweb/sympy__sympy-18199"
+    }
+  ]
+}

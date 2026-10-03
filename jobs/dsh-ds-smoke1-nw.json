@@ -1,0 +1,20 @@
+{
+  "job_name": "dsh-ds-smoke1-nw",
+  "jobs_dir": "results/raw/jobs",
+  "agent_setup_timeout_multiplier": 6.0,
+  "n_concurrent_trials": 1,
+  "agents": [
+    {
+      "import_path": "dsh_agent:DshAgent",
+      "model_name": "deepseek/deepseek-v4-flash",
+      "kwargs": {
+        "version": "0.1.2-rc.1"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-12708"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{3.7cm}@{}}
+\toprule
+ & Claude Code & mini-SWE-agent & OpenCode \\
+\midrule
+Version (pinned per arm)$^{a}$ & 2.1.259--2.1.273 (2.1.263 on GLM and Opus) & 2.4.6 & 1.18.30--1.18.31 (1.18.30 on GLM) \\
+Sampling & none sent (no flag) & none sent & none sent \\
+Thinking / effort & GLM: effort \texttt{high} (CLI flag); Qwen: effort \texttt{xhigh} via env (vLLM compat., a no-op)$^{b}$; DS: provider default & GLM: \texttt{reasoning\_effort} = \texttt{high} (request body); Qwen/DS: default & GLM: \texttt{reasoningEffort} = \texttt{high} (model config); Qwen/DS: default \\
+Tools & built-in set (Bash, Read, Edit, Write, Grep\ldots); \texttt{WebSearch} disallowed & \texttt{bash} only & bash, read, edit, write, glob, grep, webfetch, task; ripgrep pre-placed (rg arms) \\
+Context management & auto-compaction: 110k window (env override) on the Qwen arms, client default elsewhere$^{c}$ & none; per-observation head/tail trim (10k chars); hard stop at 131k & prune (40k tool-output tail) + auto-compaction at \texttt{limit.input} minus a 20k reserve (78k); input limit 98k, output limit 32k \\
+Termination & \texttt{--max-turns 300}; soft timeout (exit 124) & \texttt{step\_limit=300}; no soft timeout & \texttt{build.steps=300}; soft timeout (exit 124) \\
+Wall clock (safety net)$^{d}$ & Qwen arms: 12$\times$ the task's agent timeout; vendor-API arms: the batch's single soft timeout & Qwen arms: 6$\times$ the task's agent timeout; vendor-API arms: the same soft timeout & Qwen arms: 6$\times$ the task's agent timeout; vendor-API arms: the same soft timeout \\
+Network (agent phase) & allowlist: model API host + 172.17.0.1 & same & same \\
+Runner & Harbor 0.22.0, one container per trial, verifier after the agent exits & same & same \\
+\bottomrule
+\multicolumn{4}{@{}p{\linewidth}@{}}{\footnotesize $^{a}$~the versions of the arms scored in Tables~\ref{tab:hard45} and \ref{tab:pool447}, read off every scored trial; OpenCode 1.18.25--1.18.29 appear only in the as-shipped OpenCode arm of Table~\ref{tab:sensitivity} and in the ablations.  $^{b}$~a compatibility setting, not a treatment: \texttt{xhigh} is the Qwen chat template's own default, and vLLM's Anthropic-compatible \texttt{/v1/messages} endpoint ignores \texttt{effort} altogether (verified by a single-prompt probe against the same serving stack); Claude Code's reasoning per step is within 3--6\% of OpenCode's on the same model, and OpenCode sends no effort at all, so all three harnesses see the same thinking budget on the Qwen arms.  $^{c}$~\texttt{CLAUDE\_CODE\_AUTO\_COMPACT\_WINDOW}${=}$110000 is set on the Qwen arms only, where it fires at a measured median of 78k tokens and so matches OpenCode by construction; on the vendor-API arms Claude Code keeps its own default window and compacts much later (on GLM-5.3-Flash at a median of \pn{budget.cc.compact.pre.k}k prompt tokens, Table~\ref{tab:budget}).  $^{d}$~on the locally served Qwen arms the limit is a multiple of the task's agent timeout, six times for mini-SWE-agent and OpenCode and twelve for Claude Code; on the vendor-API arms (DeepSeek-V4-Flash, GLM-5.3-Flash, Opus~5) one soft timeout applies to all three harnesses, 2{,}760\,s on DeepSeek and Opus and 5{,}760\,s on GLM.} \\
+\end{tabular}

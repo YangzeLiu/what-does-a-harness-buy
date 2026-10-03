@@ -1,0 +1,103 @@
+APPENDIX TABLE — Terminal-Bench 2.1 harness swap, generated from data/trials.csv
+model: Qwen3.6-35B  |  subset: tb21 / offline-53  |  harnesses: CC (claude-code/control-nw), mini (mini-swe-agent/control-nw), OC-rg (opencode/control-nw-rg)  |  seed: 1
+rates are computed on offline-53 = scripts/tb21_off_tasks.txt (offline-55) minus qemu-alpine-ssh, qemu-startup;
+statistics, usability rule and canonical-attempt rule are imported from analysis/main_table.py
+
+====================================================================================================
+TABLE A1 — TERMINAL-BENCH 2.1 (offline-53): pass rate % (passes/usable tasks) [Wilson 95%], no-web, seed 1
+====================================================================================================
++----------+---------------+---------+----------+---------+--------------------+
+| harness  |      arm      |  passes | usable n |  pass % |   Wilson 95% CI    |
++----------+---------------+---------+----------+---------+--------------------+
+|    CC    |   control-nw  |    21   |    53    |   39.6  |    [27.6,53.1]     |
+|   mini   |   control-nw  |    20   |    51    |   39.2  |    [27.0,52.9]     |
+|  OC-rg   | control-nw-rg |    20   |    52    |   38.5  |    [26.5,52.0]     |
++----------+---------------+---------+----------+---------+--------------------+
+model Qwen3.6-35B (qwen3.6-35b-a3b); OC-rg = OpenCode with ripgrep pre-placed (the only
+OpenCode arm run on Terminal-Bench).  Task universe = offline-53 (scripts/tb21_off_tasks.txt
+minus the two qemu tasks); denominator = the offline-53 tasks whose
+canonical trial is usable (scored, exception_type not in the 14-type INFRA set).  Each
+harness's main, continuation, retry and smoke jobs are merged into one arm first.
+
+====================================================================================================
+TABLE A2 — TERMINAL-BENCH 2.1 PAIRED (offline-53): tasks usable in all three harnesses
+====================================================================================================
+
+  common usable offline-53 tasks across 3 harnesses (CC, mini, OC-rg): n=50
+    CC      40.0% (20/50) [27.6,53.8]
+    mini    38.0% (19/50) [25.9,51.8]
+    OC-rg   40.0% (20/50) [27.6,53.8]
+  pairwise exact McNemar on the common set:
+    CC     vs mini   n= 50   20 (40.0%) vs  19 (38.0%)  b(only-CC)=  7 c(only-mini)=  6  exact p=1.0000  flip=0.260
+    CC     vs OC-rg  n= 50   20 (40.0%) vs  20 (40.0%)  b(only-CC)=  5 c(only-OC-rg)=  5  exact p=1.0000  flip=0.200
+    mini   vs OC-rg  n= 50   19 (38.0%) vs  20 (40.0%)  b(only-mini)=  2 c(only-OC-rg)=  3  exact p=1.0000  flip=0.100
+
+====================================================================================================
+TABLE A3 — TERMINAL-BENCH 2.1 COUNTS: subset nesting, coverage, dropped rows
+====================================================================================================
+
+  subset nesting (each step names what it loses and why):
+     56  distinct tasks in trials.csv, subset=tb21 (173 rows in 13 jobs)
+     -1  adaptive-rejection-sampler: run only by a smoke job, not in scripts/tb21_off_tasks.txt
+     55  offline-55 = scripts/tb21_off_tasks.txt (89 upstream tasks minus the 34 needing the network in the agent phase)
+     -2  qemu-alpine-ssh, qemu-startup: agent setup fails deterministically on the Debian 11 base (bullseye-security gone from the mirrors -> apt 404 -> exit 100);
+         an environment defect, not a harness one, and only OC-rg ever attempted them
+     53  offline-53 = the REPORTED subset; every rate in A1 and A2 uses it
+     -0  (none: all three harnesses attempted all 53)
+     53  attempted by all three harnesses
+     -3  distribution-search, feal-differential-cryptanalysis, password-recovery: not usable in every harness (see the per-task reasons below)
+     50  common usable set (the paired n of A2)
+
+  offline-53 per harness (A1 denominators):
++----------+----------+-----------+---------+---------+----------+
+| harness  |attempted |  not run  |  usable |  passes | dropped  |
++----------+----------+-----------+---------+---------+----------+
+|    CC    |    53    |     0     |    53   |    21   |    0     |
+|   mini   |    53    |     0     |    51   |    20   |    2     |
+|  OC-rg   |    53    |     0     |    52   |    20   |    1     |
++----------+----------+-----------+---------+---------+----------+
+
+  full tb21 footprint per harness (offline-53 plus everything outside it):
++----------+---------+---------+-----------+------------+--------------+
+| harness  |   rows  |   jobs  | all tasks |of which 53 |  outside 53  |
++----------+---------+---------+-----------+------------+--------------+
+|    CC    |    58   |    4    |     54    |     53     |      1       |
+|   mini   |    56   |    4    |     54    |     53     |      1       |
+|  OC-rg   |    59   |    5    |     56    |     53     |      3       |
++----------+---------+---------+-----------+------------+--------------+
+    CC     outside offline-53: adaptive-rejection-sampler
+    mini   outside offline-53: adaptive-rejection-sampler
+    OC-rg  outside offline-53: adaptive-rejection-sampler, qemu-alpine-ssh, qemu-startup
+
+  offline-53 tasks a harness never ran:
+    — (all three harnesses ran all 53 offline-53 tasks)
+
+  offline-53 canonical trials dropped as not usable (task counted once, by its canonical row):
+    CC      0 of 53: —
+    mini    2 of 53: unscored/NonZeroAgentExitCodeError x1, unscored/verifier_incomplete x1
+    OC-rg   1 of 53: unscored/verifier_incomplete x1
+
+  why each offline-53 task falls out of the common usable set:
+    distribution-search: OC-rg=unscored/verifier_incomplete
+    feal-differential-cryptanalysis: mini=unscored/NonZeroAgentExitCodeError
+    password-recovery: mini=unscored/verifier_incomplete
+
+  raw tb21 rows dropped as INFRA (all rows of the harness, before the canonical pick):
+    CC      4: NetworkConnectionError x3, verifier_incomplete x1
+    mini    2: VerifierTimeoutError x1, verifier_incomplete x1
+    OC-rg   4: CancelledError x1, verifier_incomplete x3
+
+  non-INFRA exceptions kept as ordinary failures (budget/agent errors count as fail):
+    AgentTimeoutError x3, ContextWindowExceeded x10, NonZeroAgentExitCodeError x6, OutputTokenExceededError x7, StepCapReached x6
+
+  smoke jobs (exclude=1 in trials.csv, the rule main_table.py applies) are merged
+  into their harness's arm here.  Effect of dropping them instead:
+    no cell moves anywhere: passes and usable n are identical either way.
+    no task's canonical outcome changes.
+    only the attempted-task count outside offline-53 moves:
+    CC     task adaptive-rejection-sampler (outside offline-53): smoke-only
+    mini   task adaptive-rejection-sampler (outside offline-53): smoke-only
+    OC-rg  task adaptive-rejection-sampler (outside offline-53): smoke-only
+
+trials.csv: 8032 rows, 50 columns.
+scipy: available (McNemar cross-checked)

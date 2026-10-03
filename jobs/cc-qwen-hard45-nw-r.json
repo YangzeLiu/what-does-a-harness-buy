@@ -1,0 +1,32 @@
+{
+  "job_name": "cc-qwen-hard45-nw-r",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 12.0,
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 1,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "qwen3.8-27b",
+      "kwargs": {
+        "disallowed_tools": "WebSearch",
+        "max_turns": 300
+      },
+      "env": {
+        "ANTHROPIC_AUTH_TOKEN": "<REDACTED>",
+        "ANTHROPIC_BASE_URL": "http://172.17.0.1:8002",
+        "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "110000",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+        "CLAUDE_CODE_EFFORT_LEVEL": "xhigh"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-15957"
+    },
+    {
+      "path": "tasks_noweb/astropy__astropy-13579"
+    }
+  ]
+}

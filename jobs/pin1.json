@@ -1,0 +1,27 @@
+{
+  "job_name": "pin1",
+  "jobs_dir": "results/raw/jobs",
+  "install_only": true,
+  "n_concurrent_trials": 1,
+  "verifier": {
+    "disable": true
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "deepseek/deepseek-v4-flash",
+      "kwargs": {
+        "version": "1.18.22"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "name": "swe-bench/swe-bench-verified",
+      "ref": "sha256:b934b0cc3dc800fe945eaf9f1623329db97ee3133c706d20644524c7759fb341",
+      "task_names": [
+        "swe-bench/psf__requests-2317"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+ "qwen38.hard45.CC": {
+  "label": "CC",
+  "n_tasks": 43,
+  "n": 1,
+  "fail": 1,
+  "elsewhere": 0,
+  "ovf_tasks": [
+   "sympy__sympy-13852"
+  ],
+  "fail_tasks": [
+   "sympy__sympy-13852"
+  ],
+  "elsewhere_tasks": {},
+  "others": [
+   "OC-rg",
+   "mini"
+  ]
+ },
+ "qwen38.hard45.mini": {
+  "label": "mini",
+  "n_tasks": 45,
+  "n": 18,
+  "fail": 11,
+  "elsewhere": 3,
+  "ovf_tasks": [
+   "astropy__astropy-13398",
+   "astropy__astropy-14369",
+   "django__django-10554",
+   "django__django-11138",
+   "django__django-11885",
+   "django__django-13128",
+   "django__django-13344",
+   "django__django-14007",
+   "django__django-15128",
+   "django__django-15503",
+   "django__django-16263",
+   "pytest-dev__pytest-10356",
+   "scikit-learn__scikit-learn-25102",
+   "sphinx-doc__sphinx-11510",
+   "sphinx-doc__sphinx-9461",
+   "sympy__sympy-13878",
+   "sympy__sympy-16597",
+   "sympy__sympy-17630"
+  ],
+  "fail_tasks": [
+   "astropy__astropy-13398",
+   "astropy__astropy-14369",
+   "django__django-10554",
+   "django__django-11138",
+   "django__django-13344",
+   "django__django-15503",
+   "django__django-16263",
+   "pytest-dev__pytest-10356",
+   "sphinx-doc__sphinx-11510",
+   "sphinx-doc__sphinx-9461",
+   "sympy__sympy-16597"
+  ],
+  "elsewhere_tasks": {
+   "django__django-11138": [
+    "CC",
+    "OC-rg"
+   ],
+   "django__django-13344": [
+    "CC"
+   ],
+   "django__django-15503": [
+    "CC",
+    "OC-rg"
+   ]
+  },
+  "others": [
+   "CC",
+   "OC-rg"
+  ]
+ },
+ "qwen38.hard45.OC": {
+  "label": "OC-rg",
+  "n_tasks": 45,
+  "n": 0,
+  "fail": 0,
+  "elsewhere": 0,
+  "ovf_tasks": [],
+  "fail_tasks": [],
+  "elsewhere_tasks": {},
+  "others": [
+   "CC",
+   "mini"
+  ]
+ },
+ "qwen38.pool447.CC": {
+  "label": "CC",
+  "n_tasks": 444,
+  "n": 2,
+  "fail": 1,
+  "elsewhere": 0,
+  "ovf_tasks": [
+   "django__django-12209",
+   "django__django-15252"
+  ],
+  "fail_tasks": [
+   "django__django-15252"
+  ],
+  "elsewhere_tasks": {},
+  "others": [
+   "OC-rg",
+   "mini"
+  ]
+ },
+ "qwen38.pool447.mini": {
+  "label": "mini",
+  "n_tasks": 445,
+  "n": 34,
+  "fail": 18,
+  "elsewhere": 6,
+  "ovf_tasks": [
+   "astropy__astropy-13977",
+   "django__django-11433",
+   "django__django-11477",
+   "django__django-12406",
+   "django__django-12663",
+   "django__django-13112",
+   "django__django-13513",
+   "django__django-14351",
+   "django__django-15022",
+   "django__django-15098",
+   "django__django-15382",
+   "django__django-15554",
+   "django__django-15563",
+   "django__django-16032",
+   "django__django-16819",
+   "django__django-16950",
+   "django__django-17084",
+   "matplotlib__matplotlib-25960",
+   "matplotlib__matplotlib-26208",
+   "mwaskom__seaborn-3069",
+   "mwaskom__seaborn-3187",
+   "pylint-dev__pylint-4970",
+   "sphinx-doc__sphinx-10673",
+   "sphinx-doc__sphinx-7748",
+   "sphinx-doc__sphinx-8621",
+   "sphinx-doc__sphinx-9602",
+   "sympy__sympy-12096",
+   "sympy__sympy-17655",
+   "sympy__sympy-18698",
+   "sympy__sympy-20438",
+   "sympy__sympy-21612",
+   "sympy__sympy-22080",
+   "sympy__sympy-22456",
+   "sympy__sympy-23950"
+  ],
+  "fail_tasks": [
+   "astropy__astropy-13977",
+   "django__django-11433",
+   "django__django-11477",
+   "django__django-12406",
+   "django__django-13513",
+   "django__django-15098",
+   "django__django-16950",
+   "matplotlib__matplotlib-25960",
+   "matplotlib__matplotlib-26208",
+   "mwaskom__seaborn-3187",
+   "pylint-dev__pylint-4970",
+   "sphinx-doc__sphinx-7748",
+   "sphinx-doc__sphinx-8621",
+   "sphinx-doc__sphinx-9602",
+   "sympy__sympy-18698",
+   "sympy__sympy-20438",
+   "sympy__sympy-22080",
+   "sympy__sympy-23950"
+  ],
+  "elsewhere_tasks": {
+   "django__django-11433": [
+    "OC-rg"
+   ],
+   "django__django-13513": [
+    "CC"
+   ],
+   "matplotlib__matplotlib-25960": [
+    "OC-rg"
+   ],
+   "mwaskom__seaborn-3187": [
+    "CC"
+   ],
+   "sphinx-doc__sphinx-8621": [
+    "CC",
+    "OC-rg"
+   ],
+   "sympy__sympy-23950": [
+    "CC",
+    "OC-rg"
+   ]
+  },
+  "others": [
+   "CC",
+   "OC-rg"
+  ]
+ },
+ "qwen38.pool447.OC": {
+  "label": "OC-rg",
+  "n_tasks": 445,
+  "n": 2,
+  "fail": 0,
+  "elsewhere": 0,
+  "ovf_tasks": [
+   "django__django-13821",
+   "django__django-16100"
+  ],
+  "fail_tasks": [],
+  "elsewhere_tasks": {},
+  "others": [
+   "CC",
+   "mini"
+  ]
+ },
+ "qwen36.hard45.CC": {
+  "label": "CC",
+  "n_tasks": 45,
+  "n": 0,
+  "fail": 0,
+  "elsewhere": 0,
+  "ovf_tasks": [],
+  "fail_tasks": [],
+  "elsewhere_tasks": {},
+  "others": [
+   "OC-rg",
+   "mini"
+  ]
+ },
+ "qwen36.hard45.mini": {
+  "label": "mini",
+  "n_tasks": 45,
+  "n": 3,
+  "fail": 2,
+  "elsewhere": 0,
+  "ovf_tasks": [
+   "django__django-10554",
+   "sphinx-doc__sphinx-8548",
+   "sphinx-doc__sphinx-9461"
+  ],
+  "fail_tasks": [
+   "django__django-10554",
+   "sphinx-doc__sphinx-9461"
+  ],
+  "elsewhere_tasks": {},
+  "others": [
+   "CC",
+   "OC-rg"
+  ]
+ },
+ "qwen36.hard45.OC": {
+  "label": "OC-rg",
+  "n_tasks": 45,
+  "n": 0,
+  "fail": 0,
+  "elsewhere": 0,
+  "ovf_tasks": [],
+  "fail_tasks": [],
+  "elsewhere_tasks": {},
+  "others": [
+   "CC",
+   "mini"
+  ]
+ },
+ "qwen36.pool447.CC": {
+  "label": "CC",
+  "n_tasks": 445,
+  "n": 0,
+  "fail": 0,
+  "elsewhere": 0,
+  "ovf_tasks": [],
+  "fail_tasks": [],
+  "elsewhere_tasks": {},
+  "others": [
+   "OC-rg",
+   "mini"
+  ]
+ },
+ "qwen36.pool447.mini": {
+  "label": "mini",
+  "n_tasks": 445,
+  "n": 6,
+  "fail": 6,
+  "elsewhere": 1,
+  "ovf_tasks": [
+   "django__django-11734",
+   "django__django-15252",
+   "django__django-15280",
+   "django__django-15554",
+   "matplotlib__matplotlib-26208",
+   "sympy__sympy-19040"
+  ],
+  "fail_tasks": [
+   "django__django-11734",
+   "django__django-15252",
+   "django__django-15280",
+   "django__django-15554",
+   "matplotlib__matplotlib-26208",
+   "sympy__sympy-19040"
+  ],
+  "elsewhere_tasks": {
+   "django__django-15554": [
+    "OC-rg"
+   ]
+  },
+  "others": [
+   "CC",
+   "OC-rg"
+  ]
+ },
+ "qwen36.pool447.OC": {
+  "label": "OC-rg",
+  "n_tasks": 446,
+  "n": 0,
+  "fail": 0,
+  "elsewhere": 0,
+  "ovf_tasks": [],
+  "fail_tasks": [],
+  "elsewhere_tasks": {},
+  "others": [
+   "CC",
+   "mini"
+  ]
+ },
+ "qwen38.hard45.mini.run2": {
+  "label": "mini",
+  "present": 11,
+  "again": 7,
+  "passed": 3,
+  "present_tasks": [
+   "astropy__astropy-13398",
+   "astropy__astropy-14369",
+   "django__django-10554",
+   "django__django-11138",
+   "django__django-13344",
+   "django__django-15503",
+   "django__django-16263",
+   "pytest-dev__pytest-10356",
+   "sphinx-doc__sphinx-11510",
+   "sphinx-doc__sphinx-9461",
+   "sympy__sympy-16597"
+  ],
+  "again_tasks": [
+   "astropy__astropy-13398",
+   "django__django-10554",
+   "django__django-11138",
+   "django__django-15503",
+   "django__django-16263",
+   "sphinx-doc__sphinx-11510",
+   "sphinx-doc__sphinx-9461"
+  ],
+  "passed_tasks": [
+   "django__django-11138",
+   "django__django-13344",
+   "django__django-15503"
+  ]
+ }
+}

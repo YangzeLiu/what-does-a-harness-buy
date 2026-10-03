@@ -1,0 +1,64 @@
+{
+  "job_name": "oc-qwen36-nw-smoke",
+  "jobs_dir": "results/raw/jobs",
+  "agent_timeout_multiplier": 6.0,
+  "agent_setup_timeout_multiplier": 3.0,
+  "n_concurrent_trials": 1,
+  "verifier": {
+    "env": {
+      "UV_HTTP_TIMEOUT": "300"
+    }
+  },
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "qwen-local/qwen3.6-35b-a3b",
+      "kwargs": {
+        "opencode_config": {
+          "provider": {
+            "qwen-local": {
+              "models": {
+                "qwen3.6-35b-a3b": {
+                  "limit": {
+                    "context": 131072,
+                    "output": 32768,
+                    "input": 98000
+                  },
+                  "modalities": {
+                    "input": [
+                      "text"
+                    ],
+                    "output": [
+                      "text"
+                    ]
+                  },
+                  "name": "Qwen3.6-35B-A3B",
+                  "tool_call": true
+                }
+              },
+              "name": "Qwen local (host-a vLLM)",
+              "npm": "@ai-sdk/openai-compatible",
+              "options": {
+                "apiKey": "<REDACTED>",
+                "baseURL": "http://172.17.0.1:8002/v1"
+              }
+            }
+          },
+          "agent": {
+            "build": {
+              "steps": 300
+            }
+          }
+        }
+      },
+      "env": {
+        "QWEN_API_KEY": "<REDACTED>"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tasks_noweb/django__django-11133"
+    }
+  ]
+}
