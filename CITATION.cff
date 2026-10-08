@@ -23,4 +23,6 @@ preferred-citation:
     - family-names: Han
       given-names: Zhongyi
   year: 2026
-  notes: "arXiv preprint, identifier to be added"
+  status: preprint
+  doi: "10.48550/arXiv.2610.04433"
+  url: "https://arxiv.org/abs/2610.04433"

@@ -1,6 +1,6 @@
 # What Does a Harness Buy? Tokens, Mostly.
 
-Code and data for the paper "What Does a Harness Buy? Tokens, Mostly." by Yangze Liu and Zhongyi Han (Shandong University). The arXiv identifier will be added here once it is assigned.
+Code and data for the paper "What Does a Harness Buy? Tokens, Mostly." by Yangze Liu and Zhongyi Han (Shandong University). Paper: [arXiv:2610.04433](https://arxiv.org/abs/2610.04433).
 
 ## Summary
 
@@ -126,7 +126,10 @@ The code in this repository (`*.py`, `*.sh`) is released under the MIT License, 
   title  = {What Does a Harness Buy? {T}okens, Mostly.},
   author = {Liu, Yangze and Han, Zhongyi},
   year   = {2026},
-  note   = {arXiv preprint, identifier to be added}
+  eprint = {2610.04433},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url    = {https://arxiv.org/abs/2610.04433}
 }
 ```
 
