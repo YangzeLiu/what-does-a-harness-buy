@@ -2,11 +2,21 @@
 
 Code and data for the paper "What Does a Harness Buy? Tokens, Mostly." by Yangze Liu and Zhongyi Han (Shandong University). Paper: [arXiv:2610.04433](https://arxiv.org/abs/2610.04433).
 
+<p align="center">
+  <img src="assets/fig1a_tokens.png" width="45%" alt="Input tokens per task against pass rate on the 45 hard tasks, each model under each harness">
+  &nbsp;&nbsp;
+  <img src="assets/fig2_noise.png" width="45%" alt="Share of tasks whose outcome flips under a rerun, a harness swap and a model swap">
+</p>
+
+**Same model, three harnesses (Claude Code, mini-SWE-agent, OpenCode), SWE-bench Verified.** On the 45 hardest tasks, swapping the harness flips as many task outcomes as rerunning the same harness, 13% in both cases, while cost per task differs by up to 3x. Left: within each model, the harnesses spread two- to three-fold in input tokens, and their pass rates stay inside the 13-point gap that 45 tasks catch only half the time. Right: how many tasks change outcome under a rerun, a harness swap and a model swap.
+
+Press: [VentureBeat](https://venturebeat.com/orchestration/a-coding-agents-harness-can-triple-its-cost-without-making-it-more-accurate-study-finds) (Oct 23, 2026), [The Decoder](https://the-decoder.com/fancy-harnesses-make-coding-agents-more-expensive-but-not-better-study-finds/) (Oct 24, 2026).
+
 ## Summary
 
 A coding agent is a language model wrapped in a harness: the system prompt, the tool set, and the context management that let a chat model work inside a repository. The paper measures how much the harness moves the score when the model is held fixed. It runs five models through three production harnesses, Claude Code, mini-SWE-agent and OpenCode, on SWE-bench Verified, and reruns the same configurations to calibrate how much a score moves when nothing changes but the run.
 
-On 447 tasks and the two models run there, Claude Code and mini-SWE-agent are equivalent within five points. On a 45-task hard subset and five models, swapping the harness flips as many tasks as rerunning the same harness, 13% in both cases. The one harness effect that clears the noise is a loss: OpenCode trails by up to 9 points on the large pool, and on one model half of that gap sits in runs its output cap cut short. What the harness does decide is the bill. With the same model, the same tasks and one price list, cost per task differs by up to 3x across harnesses. The gap is set by the preamble of system prompt and tool schemas that each harness sends with every step, scaled by the number of steps. The rerun data also give the resolution a harness comparison needs: at the observed discordance, 45 tasks catch a 13-point gap only half the time, and 447 tasks resolve 5 points.
+On 447 tasks and the two models run there, Claude Code and mini-SWE-agent are equivalent within five points. On a 45-task hard subset and five models, swapping the harness flips as many tasks as rerunning the same harness, 13% in both cases. The one harness effect that clears the noise is a loss: OpenCode trails by up to 9 points on the large pool, and on one model half of that gap sits in runs its output cap cut short. What the harness does decide is the bill. With the same model, the same tasks and one price list, cost per task differs by up to 3x across harnesses. Three things set the gap. The system prompt and tool schemas are resent with every step, from about 800 tokens in mini-SWE-agent to about 16,600 in Claude Code. Everything a step appends stays in the history and is resent with every later call, and Claude Code appears to keep the model's reasoning there as well. The number of steps counts twice, since each step is another call and makes every later call longer. With GLM-5.3-Flash on the 45 hard tasks, the preamble accounts for about a quarter of the per-step input gap between Claude Code and OpenCode, and the longer history for the rest (Table A4). The rerun data also give the resolution a harness comparison needs: at the observed discordance, 45 tasks catch a 13-point gap only half the time, and 447 tasks resolve 5 points.
 
 Every number, table and figure in the paper is computed from one table of trials, `data/trials.csv`, by the scripts in `analysis/`.
 
