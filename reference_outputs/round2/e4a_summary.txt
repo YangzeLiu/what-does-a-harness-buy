@@ -1,0 +1,17 @@
+E4a: 90 trials, 45 tasks, two runs
+
+== pass rate (usable trials) ==
+run 1:  E4a 15/44 | first-round OpenCode 17/45
+run 2:  E4a 17/45 | first-round OpenCode 14/44
+run 1+2:  E4a 32/89 | first-round OpenCode 31/89
+not scored: E4a 1, first-round OpenCode 1
+
+== end class (all trials) ==
+E4a                  {'self_stop': 79, 'truncated': 11}  ended by the wall clock = 0
+first-round OpenCode {'timeout': 12, 'self_stop': 70, 'truncated': 8}  (n=90)
+first-round OpenCode run 1: ended by the wall clock 9, of which failed 6
+first-round OpenCode run 2: ended by the wall clock 3, of which failed 3
+
+== paired, same task and run ==
+E4a vs first-round OpenCode run 1: n=44  15 vs 16  b=4 c=5  exact p=1.0000
+E4a vs first-round OpenCode run 2: n=44  16 vs 14  b=3 c=1  exact p=0.6250

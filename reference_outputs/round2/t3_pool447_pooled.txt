@@ -1,0 +1,31 @@
+T3  pool447 paired differences (pp), four models; equal-weight pooled average with task-cluster bootstrap, B=10000 seed=20261110
+    Qwen models: canonical run 1 (OpenCode = OpenCode (rg)); DeepSeek-V4.1-Flash: mean over 2 runs
+
+CC-mini  do the models disagree? Cochran's Q = 7.37 on 3 df, p = 0.061
+     POOLED (4 models) +0.2  90% [-0.9, +1.2]  (task clusters 445)
+     Qwen3.6-35B-A3B                                    n=445  -1.8  se 1.7
+     Qwen3.8-27B                                        n=444  -1.4  se 1.4
+     DeepSeek-V4.1-Flash                                n=445  +1.6  se 1.0
+     Claude Opus 5.5 (tasks both harnesses completed)   n=404  +2.2  se 1.0
+       Qwen3.6-35B-A3B Newcombe paired: n=445 b=26 c=34 -1.8 90% [-4.7, +1.1]
+       Qwen3.8-27B Newcombe paired: n=444 b=17 c=23 -1.4 90% [-3.7, +1.0]
+
+CC-OC  do the models disagree? Cochran's Q = 15.27 on 3 df, p = 0.002
+     POOLED: not averaged (the models disagree)
+     Qwen3.6-35B-A3B                                    n=445  +2.9  se 1.9
+     Qwen3.8-27B                                        n=444  +7.9  se 1.9
+     DeepSeek-V4.1-Flash                                n=445  -0.2  se 1.0
+     Claude Opus 5.5 (tasks both harnesses completed)   n=393  +1.8  se 0.9
+       Qwen3.6-35B-A3B Newcombe paired: n=445 b=43 c=30 +2.9 90% [-0.3, +6.1]
+       Qwen3.8-27B Newcombe paired: n=444 b=52 c=17 +7.9 90% [+4.8, +10.9]
+
+mini-OC  do the models disagree? Cochran's Q = 34.65 on 3 df, p = 0.000
+     POOLED: not averaged (the models disagree)
+     Qwen3.6-35B-A3B                                    n=445  +4.7  se 1.9
+     Qwen3.8-27B                                        n=445  +9.2  se 1.9
+     DeepSeek-V4.1-Flash                                n=445  -1.8  se 0.8
+     Claude Opus 5.5 (tasks both harnesses completed)   n=391  -0.3  se 0.8
+       Qwen3.6-35B-A3B Newcombe paired: n=445 b=45 c=24 +4.7 90% [+1.6, +7.8]
+       Qwen3.8-27B Newcombe paired: n=445 b=57 c=16 +9.2 90% [+6.1, +12.3]
+
+Per-arm DeepSeek-V4.1-Flash usable tasks (any run): CC 445, mini 445, OC 445

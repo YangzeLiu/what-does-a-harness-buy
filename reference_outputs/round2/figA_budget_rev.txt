@@ -1,0 +1,4 @@
+pooled median output tokens = 7942  (n trials 1335)
+  Claude Code     n=445 no budget 82.7%  at median budget 53.5%  median own output 6353
+  mini-SWE-agent  n=445 no budget 82.7%  at median budget 33.7%  median own output 9896
+  OpenCode        n=445 no budget 82.9%  at median budget 49.2%  median own output 7288

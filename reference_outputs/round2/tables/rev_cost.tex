@@ -1,0 +1,15 @@
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+ & \multicolumn{3}{c}{Mean cost per trial} & \multicolumn{2}{c}{Highest $\div$ lowest} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-6}
+Model, task set (currency) & Claude Code & mini-SWE-agent & OpenCode & per trial & per solved task \\
+\midrule
+GLM-5.3-Flash, hard45 (CNY) & 1.81 / 2.09 & 0.97 / 1.06 & 0.56 / 0.52 & 3.2$\times$ / 4.0$\times$ & 3.15$\times$ \\
+HY4-Preview, hard45 (CNY) & 2.86 / 2.42 & 4.13 / 3.20 & 2.41 / 1.63 & 1.7$\times$ / 2.0$\times$ & 1.6$\times$ \\
+DeepSeek-V4-Flash, hard45 (CNY) & 0.98 & 1.02 & 0.66 & 1.5$\times$ & 1.3$\times$ \\
+DeepSeek-V4.1-Flash, hard45 (CNY) & 0.31 & 0.35 & 0.41 & 1.3$\times$ & 1.3$\times$ \\
+DeepSeek-V4.1-Flash, pool447 (CNY) & 0.143 & 0.148 & 0.147 & 1.03$\times$ & 1.05$\times$ \\
+Claude Opus 5.5, hard45 (USD) & 0.42 & 0.39 & 0.39 & 1.08$\times$ & 1.14$\times$ \\
+\bottomrule
+\end{tabular}

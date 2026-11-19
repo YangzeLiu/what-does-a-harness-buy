@@ -1,0 +1,92 @@
+T4  cost per solved task and mean cost per trial (usable canonical trials), list price from tokens;
+    Claude Opus 5.5: per-trial USD cost recorded at run time at Anthropic's list prices (cost_usd)
+    [ ] = 95% task-bootstrap interval of cost per solved
+
+--- DeepSeek-V4-Flash / hard45  (CNY)
+  runs 1     Claude Code     n=  45 solved=  21  per trial 0.976  per solved 2.092 [1.459, 3.232]
+  runs 1     mini-SWE-agent  n=  45 solved=  22  per trial 1.024  per solved 2.095 [1.521, 3.091]
+  runs 1     OpenCode        n=  45 solved=  19  per trial 0.665  per solved 1.574 [1.078, 2.496]
+  runs 1     ratio max/min  per trial 1.54x (mini/OC)   per solved 1.33x (mini/OC)
+  runs 2     Claude Code     n=  45 solved=  23  per trial 0.982  per solved 1.920 [1.345, 2.904]
+  runs 1+2   Claude Code     n=  90 solved=  44  per trial 0.979  per solved 2.002 [1.423, 2.987]
+
+--- GLM-5.3-Flash / hard45  (CNY)
+  runs 1     Claude Code     n=  45 solved=  22  per trial 1.811  per solved 3.705 [2.685, 5.432]
+  runs 1     mini-SWE-agent  n=  45 solved=  20  per trial 0.972  per solved 2.187 [1.397, 3.577]
+  runs 1     OpenCode        n=  45 solved=  18  per trial 0.562  per solved 1.406 [0.907, 2.345]
+  runs 1     ratio max/min  per trial 3.22x (CC/OC)   per solved 2.63x (CC/OC)
+  runs 2     Claude Code     n=  45 solved=  19  per trial 2.092  per solved 4.954 [3.353, 7.997]
+  runs 2     mini-SWE-agent  n=  45 solved=  18  per trial 1.060  per solved 2.649 [1.611, 4.568]
+  runs 2     OpenCode        n=  45 solved=  18  per trial 0.524  per solved 1.310 [0.896, 2.109]
+  runs 2     ratio max/min  per trial 3.99x (CC/OC)   per solved 3.78x (CC/OC)
+  runs 1+2   Claude Code     n=  90 solved=  41  per trial 1.951  per solved 4.284 [3.034, 6.431]
+  runs 1+2   mini-SWE-agent  n=  90 solved=  38  per trial 1.016  per solved 2.406 [1.555, 3.869]
+  runs 1+2   OpenCode        n=  90 solved=  36  per trial 0.543  per solved 1.358 [0.916, 2.193]
+  runs 1+2   ratio max/min  per trial 3.59x (CC/OC)   per solved 3.15x (CC/OC)
+
+--- HY4-Preview / hard45  (CNY)
+  runs 1     Claude Code     n=  45 solved=  23  per trial 2.856  per solved 5.588 [4.119, 7.973]
+  runs 1     mini-SWE-agent  n=  45 solved=  26  per trial 4.133  per solved 7.153 [5.352, 10.149]
+  runs 1     OpenCode        n=  45 solved=  21  per trial 2.412  per solved 5.169 [3.522, 7.952]
+  runs 1     ratio max/min  per trial 1.71x (mini/OC)   per solved 1.38x (mini/OC)
+  runs 2     Claude Code     n=  45 solved=  24  per trial 2.419  per solved 4.536 [3.262, 6.706]
+  runs 2     mini-SWE-agent  n=  45 solved=  24  per trial 3.201  per solved 6.001 [4.477, 8.530]
+  runs 2     OpenCode        n=  45 solved=  24  per trial 1.632  per solved 3.060 [2.161, 4.562]
+  runs 2     ratio max/min  per trial 1.96x (mini/OC)   per solved 1.96x (mini/OC)
+  runs 1+2   Claude Code     n=  90 solved=  47  per trial 2.638  per solved 5.051 [3.789, 7.018]
+  runs 1+2   mini-SWE-agent  n=  90 solved=  50  per trial 3.667  per solved 6.600 [5.047, 9.030]
+  runs 1+2   OpenCode        n=  90 solved=  45  per trial 2.022  per solved 4.044 [2.899, 5.892]
+  runs 1+2   ratio max/min  per trial 1.81x (mini/OC)   per solved 1.63x (mini/OC)
+
+--- DeepSeek-V4.1-Flash / hard45  (CNY)
+  runs 1     Claude Code     n=  45 solved=  24  per trial 0.298  per solved 0.558 [0.402, 0.818]
+  runs 1     mini-SWE-agent  n=  45 solved=  21  per trial 0.370  per solved 0.793 [0.522, 1.297]
+  runs 1     OpenCode        n=  45 solved=  27  per trial 0.412  per solved 0.686 [0.487, 0.998]
+  runs 1     ratio max/min  per trial 1.38x (OC/CC)   per solved 1.42x (mini/CC)
+  runs 2     Claude Code     n=  45 solved=  23  per trial 0.329  per solved 0.644 [0.431, 1.010]
+  runs 2     mini-SWE-agent  n=  45 solved=  20  per trial 0.333  per solved 0.750 [0.496, 1.227]
+  runs 2     OpenCode        n=  45 solved=  27  per trial 0.416  per solved 0.694 [0.492, 0.994]
+  runs 2     ratio max/min  per trial 1.26x (OC/CC)   per solved 1.16x (mini/CC)
+  runs 1+2   Claude Code     n=  90 solved=  47  per trial 0.314  per solved 0.600 [0.421, 0.895]
+  runs 1+2   mini-SWE-agent  n=  90 solved=  41  per trial 0.352  per solved 0.772 [0.521, 1.222]
+  runs 1+2   OpenCode        n=  90 solved=  54  per trial 0.414  per solved 0.690 [0.495, 0.981]
+  runs 1+2   ratio max/min  per trial 1.32x (OC/CC)   per solved 1.29x (mini/CC)
+
+--- DeepSeek-V4.1-Flash / pool447  (CNY)
+  runs 1     Claude Code     n= 445 solved= 368  per trial 0.145  per solved 0.175 [0.159, 0.192]
+  runs 1     mini-SWE-agent  n= 445 solved= 368  per trial 0.150  per solved 0.182 [0.165, 0.200]
+  runs 1     OpenCode        n= 445 solved= 369  per trial 0.145  per solved 0.175 [0.154, 0.197]
+  runs 1     ratio max/min  per trial 1.04x (mini/CC)   per solved 1.04x (mini/OC)
+  runs 2     Claude Code     n= 445 solved= 374  per trial 0.141  per solved 0.168 [0.155, 0.183]
+  runs 2     mini-SWE-agent  n= 445 solved= 360  per trial 0.145  per solved 0.179 [0.163, 0.197]
+  runs 2     OpenCode        n= 445 solved= 375  per trial 0.150  per solved 0.178 [0.158, 0.200]
+  runs 2     ratio max/min  per trial 1.06x (OC/CC)   per solved 1.07x (mini/CC)
+  runs 1+2   Claude Code     n= 890 solved= 742  per trial 0.143  per solved 0.172 [0.157, 0.187]
+  runs 1+2   mini-SWE-agent  n= 890 solved= 728  per trial 0.148  per solved 0.181 [0.165, 0.197]
+  runs 1+2   OpenCode        n= 890 solved= 744  per trial 0.147  per solved 0.176 [0.157, 0.197]
+  runs 1+2   ratio max/min  per trial 1.03x (mini/CC)   per solved 1.05x (mini/CC)
+
+--- Claude Opus 5.5 / hard45  (USD)
+  runs 1     Claude Code     n=  45 solved=  36  per trial 0.419  per solved 0.524 [0.434, 0.641]
+  runs 1     mini-SWE-agent  n=  45 solved=  37  per trial 0.388  per solved 0.471 [0.357, 0.634]
+  runs 1     OpenCode        n=  45 solved=  38  per trial 0.386  per solved 0.458 [0.375, 0.564]
+  runs 1     ratio max/min  per trial 1.08x (CC/OC)   per solved 1.14x (CC/OC)
+  runs 2     Claude Code     n=  45 solved=  37  per trial 0.397  per solved 0.483 [0.399, 0.590]
+  runs 3     Claude Code     n=  45 solved=  36  per trial 0.400  per solved 0.500 [0.412, 0.617]
+  runs 1+2+3 Claude Code     n= 135 solved= 109  per trial 0.405  per solved 0.502 [0.421, 0.606]
+
+Summary of ratios (most expensive / cheapest harness)
+  DeepSeek-V4-Flash hard45 runs 1: per trial 1.54x (mini/OC), per solved 1.33x (mini/OC)
+  GLM-5.3-Flash hard45 runs 1: per trial 3.22x (CC/OC), per solved 2.63x (CC/OC)
+  GLM-5.3-Flash hard45 runs 2: per trial 3.99x (CC/OC), per solved 3.78x (CC/OC)
+  GLM-5.3-Flash hard45 runs 1+2: per trial 3.59x (CC/OC), per solved 3.15x (CC/OC)
+  HY4-Preview hard45 runs 1: per trial 1.71x (mini/OC), per solved 1.38x (mini/OC)
+  HY4-Preview hard45 runs 2: per trial 1.96x (mini/OC), per solved 1.96x (mini/OC)
+  HY4-Preview hard45 runs 1+2: per trial 1.81x (mini/OC), per solved 1.63x (mini/OC)
+  DeepSeek-V4.1-Flash hard45 runs 1: per trial 1.38x (OC/CC), per solved 1.42x (mini/CC)
+  DeepSeek-V4.1-Flash hard45 runs 2: per trial 1.26x (OC/CC), per solved 1.16x (mini/CC)
+  DeepSeek-V4.1-Flash hard45 runs 1+2: per trial 1.32x (OC/CC), per solved 1.29x (mini/CC)
+  DeepSeek-V4.1-Flash pool447 runs 1: per trial 1.04x (mini/CC), per solved 1.04x (mini/OC)
+  DeepSeek-V4.1-Flash pool447 runs 2: per trial 1.06x (OC/CC), per solved 1.07x (mini/CC)
+  DeepSeek-V4.1-Flash pool447 runs 1+2: per trial 1.03x (mini/CC), per solved 1.05x (mini/CC)
+  Claude Opus 5.5 hard45 runs 1: per trial 1.08x (CC/OC), per solved 1.14x (CC/OC)

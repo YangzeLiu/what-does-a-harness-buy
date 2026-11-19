@@ -1,0 +1,71 @@
+hard45   rerun    pairs  22  median  13.3%  range 2.2-24.4%
+      qwen3.6-35b-a3b CC r1v2                         7/45 = 15.6%
+      qwen3.6-35b-a3b mini r1v2                       8/45 = 17.8%
+      qwen3.6-35b-a3b OC r1v2                         6/45 = 13.3%
+      qwen3.8-27b CC r1v2                             4/43 = 9.3%
+      qwen3.8-27b mini r1v2                           7/45 = 15.6%
+      qwen3.8-27b OC r1v2                             8/44 = 18.2%
+      ds-v4-flash CC r1v2                             6/45 = 13.3%
+      glm-5.3-flash CC r1v2                           5/45 = 11.1%
+      glm-5.3-flash mini r1v2                         6/45 = 13.3%
+      glm-5.3-flash OC r1v2                           2/45 = 4.4%
+      hy4-preview CC r1v2                            11/45 = 24.4%
+      hy4-preview mini r1v2                          10/45 = 22.2%
+      hy4-preview OC r1v2                             7/45 = 15.6%
+      opus5 CC r1v2                                   1/45 = 2.2%
+      opus5 CC r1v3                                   3/45 = 6.7%
+      opus5 CC r2v3                                   2/45 = 4.4%
+      ds-v41-flash CC r1v2                            7/45 = 15.6%
+      ds-v41-flash mini r1v2                          9/45 = 20.0%
+      ds-v41-flash OC r1v2                            4/45 = 8.9%
+      opus55 CC r1v2                                  3/45 = 6.7%
+      opus55 CC r1v3                                  4/45 = 8.9%
+      opus55 CC r2v3                                  5/45 = 11.1%
+hard45   harness  pairs  21  median  13.3%  range 4.4-26.7%
+      qwen3.6-35b-a3b CC-mini                        12/45 = 26.7%
+      qwen3.6-35b-a3b CC-OC                           6/45 = 13.3%
+      qwen3.6-35b-a3b mini-OC                         8/45 = 17.8%
+      qwen3.8-27b CC-mini                             7/43 = 16.3%
+      qwen3.8-27b CC-OC                               3/43 = 7.0%
+      qwen3.8-27b mini-OC                             6/45 = 13.3%
+      ds-v4-flash CC-mini                             3/45 = 6.7%
+      ds-v4-flash CC-OC                               6/45 = 13.3%
+      ds-v4-flash mini-OC                             5/45 = 11.1%
+      glm-5.3-flash CC-mini                           6/45 = 13.3%
+      glm-5.3-flash CC-OC                             6/45 = 13.3%
+      glm-5.3-flash mini-OC                           6/45 = 13.3%
+      hy4-preview CC-mini                             7/45 = 15.6%
+      hy4-preview CC-OC                               6/45 = 13.3%
+      hy4-preview mini-OC                             7/45 = 15.6%
+      ds-v41-flash CC-mini                            9/45 = 20.0%
+      ds-v41-flash CC-OC                              7/45 = 15.6%
+      ds-v41-flash mini-OC                           10/45 = 22.2%
+      opus55 CC-mini                                  5/45 = 11.1%
+      opus55 CC-OC                                    2/45 = 4.4%
+      opus55 mini-OC                                  3/45 = 6.7%
+hard45   model    pairs  70  median  25.6%  range 6.7-64.4%
+pool447  rerun    pairs   4  median   7.4%  range 6.3-13.3%
+      qwen3.6-35b-a3b mini r1v2                      59/445 = 13.3%
+      ds-v41-flash CC r1v2                           28/445 = 6.3%
+      ds-v41-flash mini r1v2                         34/445 = 7.6%
+      ds-v41-flash OC r1v2                           32/445 = 7.2%
+pool447  harness  pairs   9  median  13.5%  range 7.0-16.4%
+      qwen3.6-35b-a3b CC-mini                        60/445 = 13.5%
+      qwen3.6-35b-a3b CC-OC                          73/445 = 16.4%
+      qwen3.6-35b-a3b mini-OC                        69/445 = 15.5%
+      qwen3.8-27b CC-mini                            40/444 = 9.0%
+      qwen3.8-27b CC-OC                              69/444 = 15.5%
+      qwen3.8-27b mini-OC                            73/445 = 16.4%
+      ds-v41-flash CC-mini                           32/445 = 7.2%
+      ds-v41-flash CC-OC                             35/445 = 7.9%
+      ds-v41-flash mini-OC                           31/445 = 7.0%
+pool447  model    pairs   9  median  17.3%  range 9.2-22.2%
+      CC qwen3.6-35b-a3b|qwen3.8-27b                 71/444 = 16.0%
+      CC qwen3.6-35b-a3b|ds-v41-flash                78/445 = 17.5%
+      CC qwen3.8-27b|ds-v41-flash                    57/444 = 12.8%
+      mini qwen3.6-35b-a3b|qwen3.8-27b               77/445 = 17.3%
+      mini qwen3.6-35b-a3b|ds-v41-flash              72/445 = 16.2%
+      mini qwen3.8-27b|ds-v41-flash                  41/445 = 9.2%
+      OC qwen3.6-35b-a3b|qwen3.8-27b                 99/445 = 22.2%
+      OC qwen3.6-35b-a3b|ds-v41-flash                96/445 = 21.6%
+      OC qwen3.8-27b|ds-v41-flash                    77/445 = 17.3%

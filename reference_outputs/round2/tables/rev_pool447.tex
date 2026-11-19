@@ -1,0 +1,16 @@
+\footnotesize\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}l rcc rcc rcc@{}}
+\toprule
+ & \multicolumn{3}{c}{Claude Code $-$ mini-SWE-agent} & \multicolumn{3}{c}{Claude Code $-$ OpenCode} & \multicolumn{3}{c}{mini-SWE-agent $-$ OpenCode} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
+Model & diff. & 90\% interval & within & diff. & 90\% interval & within & diff. & 90\% interval & within \\
+\midrule
+Qwen3.6-35B-A3B & $-$1.8 & [$-$4.7, +1.1] & $\pm$5 & +2.9 & [$-$0.3, +6.1] & -- & +4.7 & [+1.6, +7.8] & -- \\
+Qwen3.8-27B & $-$1.4 & [$-$3.7, +1.0] & $\pm$5 & +7.9 & [+4.8, +10.9] & -- & +9.2 & [+6.1, +12.3] & -- \\
+DeepSeek-V4.1-Flash & +1.6 & [$-$0.0, +3.2] & $\pm$5 & $-$0.2 & [$-$1.8, +1.4] & $\pm$2 & $-$1.8 & [$-$3.2, $-$0.4] & $\pm$5 \\
+Claude Opus 5.5$^{\dagger}$ & +2.0 & [+0.4, +3.9] & $\pm$5 & +1.8 & [+0.2, +3.5] & $\pm$5 & $-$0.3 & [$-$1.7, +1.2] & $\pm$2 \\
+\midrule
+Average of the four & +0.2 & [$-$0.9, +1.2] & $\pm$2 & \multicolumn{3}{c}{not averaged} & \multicolumn{3}{c}{not averaged} \\
+Do the models disagree? ($p$) & \multicolumn{3}{c}{0.06} & \multicolumn{3}{c}{0.002} & \multicolumn{3}{c}{$<$0.001} \\
+\bottomrule
+\end{tabular}

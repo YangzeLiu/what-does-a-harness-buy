@@ -1,0 +1,4 @@
+E4b  OpenCode + Qwen3.8-27B, 73 tasks x 2 caps x 2 runs; trials 292, of which 3 are reruns of a trial that could not be scored
+  OLD (32k output cap): passed 86/146 usable (trials 146)
+  NEW (131k output cap): passed 99/146 usable (trials 146)
+  per task: NEW passes more often on 18, OLD on 8, ties 47; two-sided exact sign test p = 0.0755

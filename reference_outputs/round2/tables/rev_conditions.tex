@@ -1,0 +1,22 @@
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.29\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}@{}}
+\toprule
+Condition that differed & Check & Result \\
+\midrule
+With Qwen3.8-27B on hard45 OpenCode had 5{,}760\,s of wall clock and Claude Code 36{,}000\,s &
+OpenCode rerun at 36{,}000\,s (Qwen3.8-27B, hard45, two runs) &
+Trials ended by the wall clock fall from 12 to 0; passes go from 31/89 to 32/89. On pool447 no OpenCode trial was ended by the wall clock. It does not explain the deficit. \\
+\addlinespace
+OpenCode does not continue a response cut off by its output cap &
+Cap of 32k against 131k output tokens on the 73 affected pool447 tasks (Qwen3.8-27B, two runs each) &
+Passes go from 86/146 to 99/146 ($p = 0.076$): consistent with truncation losing tasks, short of significance. \\
+\addlinespace
+For non-Anthropic models Claude Code runs through a compatibility layer &
+Claude Opus 5.5 through the native interface in all three harnesses &
+hard45: Claude Code 36, 37, 36; mini-SWE-agent 37; OpenCode 38. pool447 (391 tasks): 95.1\%, 93.1\%, 93.4\%. \\
+\addlinespace
+Timeout and output cap (rows 1 and 2) &
+DeepSeek-V4.1-Flash with one soft timeout for all three harnesses and the same 32k output cap in Claude Code and OpenCode (pool447, two runs) &
+83.4\%, 81.8\%, 83.6\%: within 2 points under equal settings. \\
+\bottomrule
+\end{tabular}

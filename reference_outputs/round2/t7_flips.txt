@@ -1,0 +1,42 @@
+T7  hard45 flip rates (paper definition, analysis/paper_numbers.py)
+
+Per-cell rerun flips (tasks usable in both runs), every cell with >= 2 runs
+  Qwen3.6-35B-A3B                      Claude Code     runs 1v2:  7/45 = 15.6%
+  Qwen3.6-35B-A3B                      mini-SWE-agent  runs 1v2:  8/45 = 17.8%
+  Qwen3.6-35B-A3B                      OpenCode        runs 1v2:  6/45 = 13.3%
+  Qwen3.8-27B                          Claude Code     runs 1v2:  4/43 =  9.3%
+  Qwen3.8-27B                          mini-SWE-agent  runs 1v2:  7/45 = 15.6%
+  Qwen3.8-27B                          OpenCode        runs 1v2:  8/44 = 18.2%
+  DeepSeek-V4-Flash                    Claude Code     runs 1v2:  6/45 = 13.3%
+  GLM-5.3-Flash                        Claude Code     runs 1v2:  5/45 = 11.1%
+  GLM-5.3-Flash                        mini-SWE-agent  runs 1v2:  6/45 = 13.3%
+  GLM-5.3-Flash                        OpenCode        runs 1v2:  2/45 =  4.4%
+  HY4-Preview                          Claude Code     runs 1v2: 11/45 = 24.4%
+  HY4-Preview                          mini-SWE-agent  runs 1v2: 10/45 = 22.2%
+  HY4-Preview                          OpenCode        runs 1v2:  7/45 = 15.6%
+  Claude Opus 5                        Claude Code     runs 1v2:  1/45 =  2.2%
+  Claude Opus 5                        Claude Code     runs 1v3:  3/45 =  6.7%
+  Claude Opus 5                        Claude Code     runs 2v3:  2/45 =  4.4%
+  DeepSeek-V4.1-Flash                  Claude Code     runs 1v2:  7/45 = 15.6%
+  DeepSeek-V4.1-Flash                  mini-SWE-agent  runs 1v2:  9/45 = 20.0%
+  DeepSeek-V4.1-Flash                  OpenCode        runs 1v2:  4/45 =  8.9%
+
+Largest change in pass count between two runs of the same cell (hard45)
+  Qwen3.6-35B-A3B                      Claude Code     r1 11/45  r2 10/45   max |delta passes| = 1  (max |delta rate| = 2.2 pts)
+  Qwen3.6-35B-A3B                      mini-SWE-agent  r1 15/45  r2 13/45   max |delta passes| = 2  (max |delta rate| = 4.4 pts)
+  Qwen3.6-35B-A3B                      OpenCode        r1 11/45  r2 11/45   max |delta passes| = 0  (max |delta rate| = 0.0 pts)
+  Qwen3.8-27B                          Claude Code     r1 19/43  r2 20/45   max |delta passes| = 1  (max |delta rate| = 0.3 pts)
+  Qwen3.8-27B                          mini-SWE-agent  r1 17/45  r2 18/45   max |delta passes| = 1  (max |delta rate| = 2.2 pts)
+  Qwen3.8-27B                          OpenCode        r1 17/45  r2 14/44   max |delta passes| = 3  (max |delta rate| = 6.0 pts)
+  DeepSeek-V4-Flash                    Claude Code     r1 21/45  r2 23/45   max |delta passes| = 2  (max |delta rate| = 4.4 pts)
+  GLM-5.3-Flash                        Claude Code     r1 22/45  r2 19/45   max |delta passes| = 3  (max |delta rate| = 6.7 pts)
+  GLM-5.3-Flash                        mini-SWE-agent  r1 20/45  r2 18/45   max |delta passes| = 2  (max |delta rate| = 4.4 pts)
+  GLM-5.3-Flash                        OpenCode        r1 18/45  r2 18/45   max |delta passes| = 0  (max |delta rate| = 0.0 pts)
+  HY4-Preview                          Claude Code     r1 23/45  r2 24/45   max |delta passes| = 1  (max |delta rate| = 2.2 pts)
+  HY4-Preview                          mini-SWE-agent  r1 26/45  r2 24/45   max |delta passes| = 2  (max |delta rate| = 4.4 pts)
+  HY4-Preview                          OpenCode        r1 21/45  r2 24/45   max |delta passes| = 3  (max |delta rate| = 6.7 pts)
+  Claude Opus 5                        Claude Code     r1 36/45  r2 35/45  r3 35/45   max |delta passes| = 1  (max |delta rate| = 2.2 pts)
+  DeepSeek-V4.1-Flash                  Claude Code     r1 24/45  r2 23/45   max |delta passes| = 1  (max |delta rate| = 2.2 pts)
+  DeepSeek-V4.1-Flash                  mini-SWE-agent  r1 21/45  r2 20/45   max |delta passes| = 1  (max |delta rate| = 2.2 pts)
+  DeepSeek-V4.1-Flash                  OpenCode        r1 27/45  r2 27/45   max |delta passes| = 0  (max |delta rate| = 0.0 pts)
+  overall max |delta passes| = 3  (paper: 'rerunning one cell moves it by up to three')

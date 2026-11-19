@@ -1,0 +1,7 @@
+== pool447
+  CC-mini qwen3.6-35b-a3b  n=445 diff= -1.8 90%[ -4.7, +1.1] p=0.366 TOST±2345=...Y minδ=4.7
+  CC-mini qwen3.8-27b      n=444 diff= -1.4 90%[ -3.7, +1.0] p=0.430 TOST±2345=..YY minδ=3.7
+  CC-OC   qwen3.6-35b-a3b  n=445 diff= +2.9 90%[ -0.3, +6.1] p=0.160 TOST±2345=.... minδ=6.1
+  CC-OC   qwen3.8-27b      n=444 diff= +7.9 90%[ +4.8,+10.9] p=0.000 TOST±2345=.... minδ=10.9
+  mini-OC   qwen3.6-35b-a3b  n=445 diff= +4.7 90%[ +1.6, +7.8] p=0.015 TOST±2345=.... minδ=7.8
+  mini-OC   qwen3.8-27b      n=445 diff= +9.2 90%[ +6.1,+12.3] p=0.000 TOST±2345=.... minδ=12.3

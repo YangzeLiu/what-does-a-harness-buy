@@ -1,0 +1,18 @@
+                               Claude Code             mini-SWE-agent          OpenCode              
+hard45: tasks passed out of 45 (per run)
+  Qwen3.6-35B-A3B              11, 10                  15, 13                  11, 11                
+  Qwen3.8-27B                  19/43, 20               17, 18                  17, 14/44             
+  DeepSeek-V4-Flash            21, 23                  22                      19                    
+  GLM-5.3-Flash                22, 19                  20, 18                  18, 18                
+  HY4-Preview                  23, 24                  26, 24                  21, 24                
+  DeepSeek-V4.1-Flash          24, 23                  21, 20                  27, 27                
+  Claude Opus 5.5              36, 37, 36              37                      38                    
+  Claude Opus 5                36, 35, 35              n/a                     n/a                   
+pool447: pass rate (%) per run
+  Qwen3.6-35B-A3B              69.7                    71.5, 70.3              66.6                  
+  Qwen3.8-27B                  78.2                    79.3                    70.1                  
+  DeepSeek-V4.1-Flash          82.7, 84.0              82.7, 80.9              82.9, 84.3            
+  Claude Opus 5.5 (391 tasks)  95.1                    93.1                    93.4                     (Claude Code on all 447: passed 422)
+Two other benchmarks, DeepSeek-V4.1-Flash: pass rate (%) per run
+  SpreadsheetBench Verified    88.3, 88.5              88.8, 87.0              88.0, 88.8            
+  DABstep                      74.0, 74.7              72.0, 76.0              71.3, 75.3            

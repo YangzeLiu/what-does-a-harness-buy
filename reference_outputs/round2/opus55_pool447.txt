@@ -1,0 +1,8 @@
+Claude Opus 5.5, pool447 (canonical usable trials)
+  Claude Code: 447 tasks, passed 422
+usable: CC 447, mini 404, OC 393; all three 391; passes on 3-way set: CC 372, mini 364, OC 365
+  on the 3-way set: passed by all three 358, by none 15, outcome differs 18
+-- 3-way common set
+   CC-mini: n=391 CC 372 mini 364 b=11 c=3 diff +2.0pp 90% [+0.4, +3.9] McNemar p=0.057 Holm p=0.172
+   CC-OC: n=391 CC 372 OC 365 b=10 c=3 diff +1.8pp 90% [+0.2, +3.5] McNemar p=0.092 Holm p=0.185
+   mini-OC: n=391 mini 364 OC 365 b=4 c=5 diff -0.3pp 90% [-1.7, +1.2] McNemar p=1.000 Holm p=1.000

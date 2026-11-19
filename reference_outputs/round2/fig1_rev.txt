@@ -1,0 +1,27 @@
+panel (a): model harness runs  mean input Mtok  pass%  (k/n)  n_tok
+  Qwen3.6-35B-A3B        CC    runs=2    4.69M   23.3%  (21/90)  ntok=90
+  Qwen3.6-35B-A3B        mini  runs=2    4.68M   31.1%  (28/90)  ntok=90
+  Qwen3.6-35B-A3B        OC    runs=2    2.12M   24.4%  (22/90)  ntok=90
+  Qwen3.8-27B            CC    runs=2    4.03M   44.3%  (39/88)  ntok=88
+  Qwen3.8-27B            mini  runs=2    5.05M   38.9%  (35/90)  ntok=90
+  Qwen3.8-27B            OC    runs=2    3.22M   34.8%  (31/89)  ntok=89
+  DeepSeek-V4-Flash      CC    runs=2    8.48M   48.9%  (44/90)  ntok=90
+  DeepSeek-V4-Flash      mini  runs=1   11.45M   48.9%  (22/45)  ntok=45
+  DeepSeek-V4-Flash      OC    runs=1    6.07M   42.2%  (19/45)  ntok=45
+  GLM-5.3-Flash          CC    runs=2    7.17M   45.6%  (41/90)  ntok=90
+  GLM-5.3-Flash          mini  runs=2    3.87M   42.2%  (38/90)  ntok=90
+  GLM-5.3-Flash          OC    runs=2    1.88M   40.0%  (36/90)  ntok=90
+  HY4-Preview            CC    runs=2    4.62M   52.2%  (47/90)  ntok=90
+  HY4-Preview            mini  runs=2    6.06M   55.6%  (50/90)  ntok=90
+  HY4-Preview            OC    runs=2    3.03M   50.0%  (45/90)  ntok=90
+  DeepSeek-V4.1-Flash    CC    runs=2    2.56M   52.2%  (47/90)  ntok=90
+  DeepSeek-V4.1-Flash    mini  runs=2    2.90M   45.6%  (41/90)  ntok=90
+  DeepSeek-V4.1-Flash    OC    runs=2    3.84M   60.0%  (54/90)  ntok=90
+  Claude Opus 5.5        CC    runs=3    0.43M   80.7%  (109/135)  ntok=135
+  Claude Opus 5.5        mini  runs=1    0.40M   82.2%  (37/45)  ntok=45
+  Claude Opus 5.5        OC    runs=1    0.44M   84.4%  (38/45)  ntok=45
+
+panel (b): pair  pooled diff [95% CI]  ; per-model diffs
+  CC-mini: pooled +0.4 [-2.1, +2.9]  Qwen3.6-35B-A3B:-7.8  Qwen3.8-27B:+5.6  DeepSeek-V4-Flash:+0.0  GLM-5.3-Flash:+3.3  HY4-Preview:-3.3  DeepSeek-V4.1-Flash:+6.7  Claude Opus 5.5:-1.5
+  CC-OC: pooled +1.5 [-1.5, +4.7]  Qwen3.6-35B-A3B:-1.1  Qwen3.8-27B:+8.9  DeepSeek-V4-Flash:+6.7  GLM-5.3-Flash:+5.6  HY4-Preview:+2.2  DeepSeek-V4.1-Flash:-7.8  Claude Opus 5.5:-3.7
+  mini-OC: pooled +1.1 [-1.4, +3.7]  Qwen3.6-35B-A3B:+6.7  Qwen3.8-27B:+3.3  DeepSeek-V4-Flash:+6.7  GLM-5.3-Flash:+2.2  HY4-Preview:+5.6  DeepSeek-V4.1-Flash:-14.4  Claude Opus 5.5:-2.2

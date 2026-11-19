@@ -1,0 +1,26 @@
+\footnotesize\setlength{\tabcolsep}{7pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & Claude Code & mini-SWE-agent & OpenCode \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{hard45: tasks passed out of 45}} \\
+Qwen3.6-35B-A3B & 11, 10 & 15, 13 & 11, 11 \\
+Qwen3.8-27B & 19/43, 20 & 17, 18 & 17, 14/44 \\
+DeepSeek-V4-Flash & 21, 23 & 22 & 19 \\
+GLM-5.3-Flash & 22, \textbf{19} & 20, \textbf{18} & 18, \textbf{18} \\
+HY4-Preview & 23, \textbf{24} & 26, \textbf{24} & 21, \textbf{24} \\
+DeepSeek-V4.1-Flash & \textbf{24, 23} & \textbf{21, 20} & \textbf{27, 27} \\
+Claude Opus 5.5 & \textbf{36, 37, 36} & \textbf{37} & \textbf{38} \\
+Claude Opus 5 & 36, 35, 35 & n/a & n/a \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{pool447: pass rate (\%)}} \\
+Qwen3.6-35B-A3B & 69.7 & 71.5, 70.3 & 66.6 \\
+Qwen3.8-27B & 78.2 & 79.3 & 70.1 \\
+DeepSeek-V4.1-Flash & \textbf{82.7, 84.0} & \textbf{82.7, 80.9} & \textbf{82.9, 84.3} \\
+Claude Opus 5.5 (391 tasks)$^{\dagger}$ & \textbf{95.1} & \textbf{93.1} & \textbf{93.4} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Two other benchmarks, DeepSeek-V4.1-Flash: pass rate (\%)}} \\
+SpreadsheetBench Verified & \textbf{88.3, 88.5} & \textbf{88.8, 87.0} & \textbf{88.0, 88.8} \\
+DABstep & \textbf{74.0, 74.7} & \textbf{72.0, 76.0} & \textbf{71.3, 75.3} \\
+\bottomrule
+\end{tabular}

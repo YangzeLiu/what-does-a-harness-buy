@@ -1,0 +1,45 @@
+T1  hard45: passed/usable per run (canonical, paper rule); OpenCode = OpenCode (rg) arm for paper models
+source: data/trials.csv via paper_numbers.canonical_by_seed + pick_arm (paper models, run1 GLM/HY4);
+        data/round2/trials_round2.csv: swe_glm53flash_run2 (GLM run 2); swe_hy4preview_run2 (HY4 run 2);
+        swe_dsv41flash_hard45 (DS V4.1); swe_opus55_hard45 (Opus 5.5)
+
+model                          harness         runs                                            sum   rate
+Qwen3.6-35B-A3B                Claude Code     r1:11/45  r2:10/45                            21/90   23.3
+Qwen3.6-35B-A3B                mini-SWE-agent  r1:15/45  r2:13/45                            28/90   31.1
+Qwen3.6-35B-A3B                OpenCode        r1:11/45  r2:11/45                            22/90   24.4
+
+Qwen3.8-27B                    Claude Code     r1:19/43  r2:20/45                            39/88   44.3
+Qwen3.8-27B                    mini-SWE-agent  r1:17/45  r2:18/45                            35/90   38.9
+Qwen3.8-27B                    OpenCode        r1:17/45  r2:14/44                            31/89   34.8
+
+DeepSeek-V4-Flash              Claude Code     r1:21/45  r2:23/45                            44/90   48.9
+DeepSeek-V4-Flash              mini-SWE-agent  r1:22/45                                      22/45   48.9
+DeepSeek-V4-Flash              OpenCode        r1:19/45                                      19/45   42.2
+
+GLM-5.3-Flash                  Claude Code     r1:22/45  r2:19/45                            41/90   45.6
+GLM-5.3-Flash                  mini-SWE-agent  r1:20/45  r2:18/45                            38/90   42.2
+GLM-5.3-Flash                  OpenCode        r1:18/45  r2:18/45                            36/90   40.0
+
+HY4-Preview                    Claude Code     r1:23/45  r2:24/45                            47/90   52.2
+HY4-Preview                    mini-SWE-agent  r1:26/45  r2:24/45                            50/90   55.6
+HY4-Preview                    OpenCode        r1:21/45  r2:24/45                            45/90   50.0
+
+DeepSeek-V4.1-Flash            Claude Code     r1:24/45  r2:23/45                            47/90   52.2
+DeepSeek-V4.1-Flash            mini-SWE-agent  r1:21/45  r2:20/45                            41/90   45.6
+DeepSeek-V4.1-Flash            OpenCode        r1:27/45  r2:27/45                            54/90   60.0
+
+Claude Opus 5.5                Claude Code     r1:36/45  r2:37/45  r3:36/45                109/135   80.7
+Claude Opus 5.5                mini-SWE-agent  r1:37/45                                      37/45   82.2
+Claude Opus 5.5                OpenCode        r1:38/45                                      38/45   84.4
+
+Cross-check of run 1 against the first-round Table 1 -- only mismatches are listed below the OK count
+  15 cells match; 0 mismatches
+
+Best harness (pass rate summed over runs)
+  Qwen3.6-35B-A3B                best: mini-SWE-agent                      CC  23.3  mini  31.1  OC  24.4
+  Qwen3.8-27B                    best: Claude Code                         CC  44.3  mini  38.9  OC  34.8
+  DeepSeek-V4-Flash              best: Claude Code = mini-SWE-agent        CC  48.9  mini  48.9  OC  42.2
+  GLM-5.3-Flash                  best: Claude Code                         CC  45.6  mini  42.2  OC  40.0
+  HY4-Preview                    best: mini-SWE-agent                      CC  52.2  mini  55.6  OC  50.0
+  DeepSeek-V4.1-Flash            best: OpenCode                            CC  52.2  mini  45.6  OC  60.0
+  Claude Opus 5.5                best: OpenCode                            CC  80.7  mini  82.2  OC  84.4
